@@ -196,13 +196,12 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
 <body>
 
 <a href="#mainContent" class="skip-link">Skip to assessment</a>
-
 <div class="bmark-banner" id="bmarkBanner">
   <div class="bmark-inner">
     <div class="bmark-icon">&#9873;</div>
     <div class="bmark-txt">
       <h4>Bookmark this page before you begin</h4>
-      <p>Your answers are saved privately on this device. If you close the browser and come back, everything will still be here.</p>
+      <p>Your answers are saved privately on this device. If you close the browser and come back, everything will still be here. Bookmark now so you can find your way back.</p>
     </div>
     <button class="bmark-dismiss" onclick="dismissBmark()" aria-label="Dismiss">&#215;</button>
   </div>
@@ -223,11 +222,11 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
     <div class="section">
       <div class="ret-banner" id="retBanner">
         <h4>We are really glad you have come back.</h4>
-        <p>Take all the time you need. Your answers are exactly where you left them.</p>
+        <p>It is ok to take your time. Your answers are exactly where you left them. Pick up whenever you are ready.</p>
       </div>
       <div class="label-tag">Parents2Be International</div>
       <h1>How has your partner been doing lately?</h1>
-      <p class="lead">You are here because something has felt off and you are trying to understand what you are seeing. That instinct matters. This is a quiet space for you to share what you have noticed - honestly, without judgment, and without it having to be perfectly formed.</p>
+      <p class="lead">You are here because something has felt off and you are trying to understand what you are seeing. That instinct matters. This is a quiet space to share what you have noticed - honestly, without judgement, and without it having to be perfectly formed.</p>
       <div class="promise">
         <p>This takes about five minutes.</p>
         <p>Your answers are saved privately on this device. You can stop and come back at any point.</p>
@@ -237,7 +236,7 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
       <p class="quiet">Built by Sarah Bailey, Founder of Parents2Be International. NHS eLfH Perinatal Mental Health trained. This is not a clinical diagnosis. It is a starting point for getting the right support.</p>
       <div class="divider"></div>
       <div class="btn-row">
-        <button class="btn btn-dark" id="startBtn" onclick="handleStart()" aria-label="Start the assessment">I am ready - let us do this</button>
+        <button class="btn btn-dark" id="startBtn" onclick="handleStart()" aria-label="Start the assessment">Start - I am ready</button>
       </div>
       <div style="margin-top:0.8rem">
         <span class="quiet">Want to understand more first?</span>
@@ -250,7 +249,7 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
   <div class="screen" id="sConsent">
     <div class="section">
       <div class="label-tag">Before you begin</div>
-      <h2>You are not alone in noticing this</h2>
+      <h2 id="consentHeading">You are not alone in noticing this</h2>
       <div class="consent-intro">
         <p id="consentOpeningLine">You are here because you care about him - and because something in you has been quietly wondering whether what you are seeing is more than tiredness or stress.</p>
         <p>What you are noticing matters. Partners are often the first to see the signs - long before a father would name them himself. This assessment gives you a way to put words to what you have been observing.</p>
@@ -287,12 +286,15 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
       <div class="progress-text">Getting started</div>
     </div>
     <div class="section">
+      <div id="optCBanner" style="display:none;border-left:3px solid var(--gold);padding:0.9rem 1rem;margin-bottom:1.2rem;background:var(--promise-bg);">
+        <p style="font-size:14px;color:var(--text2);line-height:1.7;">We respect your privacy. You can go straight to the assessment <a href="#" onclick="skipContext();return false;" style="color:var(--gold-dark);font-weight:500;text-decoration:underline;">here</a>.</p>
+      </div>
       <div class="label-tag">A little context</div>
       <h2>A few quick things to help us give you more relevant information</h2>
       <p class="body-text">None of this is required. These details help us understand your situation better - they are never shared and never stored against your name.</p>
       <div class="field-row">
         <div class="field-group">
-          <label class="field-label" for="partnerAge">Your partner's age</label>
+          <label class="field-label">Your partner's age</label>
           <select class="field-input" id="partnerAge" onchange="saveCtx()">
             <option value="">Please select</option>
             <option>20 to 25</option><option>25 to 30</option><option>30 to 35</option>
@@ -311,7 +313,7 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
       </div>
       <div class="field-row">
         <div class="field-group">
-          <label class="field-label" for="numKids">Number of children</label>
+          <label class="field-label">Number of children</label>
           <select class="field-input" id="numKids" onchange="saveCtx()">
             <option value="">Please select</option>
             <option>1 - this is our first</option><option>2</option><option>3</option><option>4 or more</option>
@@ -319,7 +321,7 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
           </select>
         </div>
         <div class="field-group">
-          <label class="field-label" for="situation">Your situation</label>
+          <label class="field-label">Your situation</label>
           <select class="field-input" id="situation" onchange="saveCtx()">
             <option value="">Please select</option>
             <option>Married</option><option>Co-habiting partner</option>
@@ -330,22 +332,22 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
         </div>
       </div>
       <div class="field-group">
-        <label class="field-label" for="support">Do you have people around you right now - friends, family, anyone you can talk to?</label>
-        <select class="field-input" id="support" onchange="saveCtx()">
-          <option value="">Please select</option>
-          <option value="good">Yes - people I can actually talk to</option>
-          <option value="limited">A few people but not always available when I need them</option>
-          <option value="isolated">Not really - I am mostly carrying this on my own</option>
-          <option value="nts">Prefer not to say</option>
-        </select>
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="howlong">How long have you been noticing something might be wrong?</label>
+        <label class="field-label">How long have you been noticing something might be wrong?</label>
         <select class="field-input" id="howlong" onchange="saveCtx()">
           <option value="">Please select</option>
           <option value="recent">A few days or a week or two</option>
           <option value="weeks">Several weeks</option>
           <option value="months">A few months or more</option>
+          <option value="nts">Prefer not to say</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Do you have people around you right now - friends, family, anyone you can talk to?</label>
+        <select class="field-input" id="support" onchange="saveCtx()">
+          <option value="">Please select</option>
+          <option value="good">Yes - people I can actually talk to</option>
+          <option value="limited">A few people but not always available when I need them</option>
+          <option value="isolated">Not really - I am mostly carrying this on my own</option>
           <option value="nts">Prefer not to say</option>
         </select>
       </div>
@@ -408,11 +410,10 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
       <div class="safety-screen">
         <h2>What you have shared suggests your partner is carrying something serious right now.</h2>
         <p>Before you continue, please read this carefully.</p>
-        <p>What you are seeing is real. It deserves real support - not waiting, not hoping it passes. This is the kind of thing that requires medical attention and your partner deserves to receive it.</p>
-        <p>The most important thing you can do right now is help him get in front of his GP. He does not need to have the words ready before he goes. You can go with him. You can make the call on his behalf if he will let you.</p>
+        <p>What you are seeing is real. It deserves real support - not waiting, not hoping it passes. The most important thing you can do right now is help him get in front of his GP. He does not need to have the words ready before he goes. You can go with him. You can make the call on his behalf if he will let you.</p>
         <p>While you are working out the next step, please do not carry this alone either.</p>
-        <p class="crisis-line"><a href="tel:116123">Samaritans - 116 123</a> - free, 24 hours, no judgement</p>
-        <p class="crisis-line"><a href="tel:08005858">CALM - 0800 58 58 58</a> - 6pm to midnight</p>
+        <p class="crisis-line"><a href="tel:116123">Samaritans - 116 123</a> - free, 24 hours, no judgement, no pressure to say the right thing</p>
+        <p class="crisis-line"><a href="tel:08005858580">CALM - 0800 58 58 58</a> - 6pm to midnight</p>
         <p class="crisis-line">If he is in immediate danger, call <a href="tel:999">999</a>.</p>
         <div class="safety-ack" id="safetyAck" onclick="pickSafetyAck()">
           <div class="safety-ack-box" id="safetyAckBox">&#10003;</div>
@@ -438,7 +439,6 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
         <div class="score-reveal-label" id="rLabel">out of 39</div>
       </div>
       <div id="rBand"></div>
-
       <div id="consentReview" style="margin:1.4rem 0;border:1.5px solid var(--border);padding:1.2rem 1.4rem;background:var(--promise-bg);">
         <div style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark);font-weight:600;margin-bottom:0.8rem;">Your privacy choice</div>
         <p id="consentReviewText" style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:1rem;"></p>
@@ -452,11 +452,9 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
         </div>
         <p style="font-size:12px;color:var(--text4);margin-top:0.8rem;font-style:italic;" id="consentReviewFooter"></p>
       </div>
-
       <div class="divider"></div>
       <div id="rFlags"></div>
       <div id="rSteps"></div>
-
       <div class="email-block" id="emailBlock">
         <h3>Keep these results somewhere safe</h3>
         <p>If you would like to hold onto what you have shared today - whether that is for a conversation with your health visitor, a GP appointment, or just to look back at - we can send it to your inbox now.</p>
@@ -467,17 +465,14 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
         </div>
         <button class="email-skip" onclick="skipEmail()">Not right now - just show me what to do next</button>
       </div>
-
       <div id="rRes" style="display:none"></div>
-
       <div class="page-footer">
         <div>Parents2Be International - parents2beintl.com</div>
         <div>Built by Sarah Bailey, Founder of Parents2Be International. NHS eLfH Perinatal Mental Health trained (100%).</div>
         <div>This assessment uses the Gotland Male Depression Scale (Walinder and Rutz, 2001), reframed for partner observation. It is not a clinical diagnosis. It is a starting point for getting the right support.</div>
         <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
           <strong style="font-size:12px;color:var(--text3)">Accessibility</strong>
-          <p style="margin-top:4px">Parents2Be International is committed to making every resource accessible. This platform supports screen readers, keyboard navigation, high contrast display, and reduced motion. Dark and light display modes are available using the toggle above.</p>
-          <p style="margin-top:6px">If you need this assessment in an alternative format - including large print or audio - please contact us at <a href="mailto:hello@parents2beintl.com">hello@parents2beintl.com</a>.</p>
+          <p style="margin-top:4px">Parents2Be International is committed to making every resource accessible. This platform supports screen readers, keyboard navigation, high contrast display, and reduced motion. If you need this assessment in an alternative format, please contact us at <a href="mailto:hello@parents2beintl.com">hello@parents2beintl.com</a>.</p>
         </div>
         <div style="margin-top:0.8rem"><a href="https://parents2beintl.com">Home</a> - <a href="https://parents2beintl.com/privacy">Privacy</a> - <a href="mailto:hello@parents2beintl.com">Accessibility</a></div>
       </div>
@@ -488,19 +483,19 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
 
 <script>
 const QS=[
-  {t:"Has your partner been getting wound up or frustrated more easily lately - by things that would not normally bother him that much?",s:"Think about small everyday things - traffic, noise, a comment that landed wrong, the baby crying. Have his reactions felt different to you?",a:["Not really - he seems fairly steady, similar to how he normally is","A little more reactive than usual - I have noticed it but it does not feel alarming","Yes - things seem to get to him in ways that feel out of proportion","Yes - he seems constantly on edge and almost everything is triggering a reaction"]},
-  {t:"Have you noticed him snapping, losing his temper, or getting angry in a way that does not feel like him?",s:"This might show up as short temper, sarcasm, saying things he would not normally say, or a low-level irritation that does not seem to switch off.",a:["Not particularly - his reactions have felt like his own","Occasionally - more short-tempered than he would normally be","Yes - it is happening regularly and he seems aware of it too","Yes - it is affecting everyone around him and I am genuinely concerned"]},
-  {t:"Does he seem able to switch off and relax when he has the chance?",s:"Even in a quiet moment - does he actually rest, or does he stay tense and restless even when things are calm?",a:["Yes - he can generally unwind when he gets the opportunity","It takes longer than it used to but he gets there","He struggles to settle even in moments when he should be able to","He cannot switch off at all - he stays restless regardless of what is happening around him"]},
-  {t:"How has his sleep been - during the time he would normally sleep?",s:"This is not just about broken nights with the baby. When he has the chance to sleep, can he actually sleep?",a:["He is managing to get some rest when the opportunity is there","It seems harder than it should be - he struggles even when he could sleep","Sleep is a real issue - he is either unable to sleep or sleeping far too much","He is running on very little and it has been this way for some time"]},
-  {t:"Have you noticed him turning to anything more than usual to take the edge off?",s:"This might be alcohol, but it could also be staying out longer, working late, gaming, scrolling, exercise, or anything he seems to reach for when things feel heavy. There is no judgment here - this is about noticing what the pattern might be telling you.",a:["Not really - nothing has noticeably changed in how he manages day to day","Perhaps slightly - I have noticed it but it does not feel like a problem yet","Yes - I have noticed him relying on something to get through and it concerns me","Yes - it has escalated and I think it has become a way of coping rather than a choice"]},
-  {t:"How would you honestly describe his mood on an average day recently?",s:"Not the version he shows at work or to other people. The version you see at home, when the performance is off.",a:["Generally holding - up and down but nothing that stays","Flat more often than not - harder to lift him than it used to be","Low most of the time - it takes real effort for him to find anything positive","Very low or empty - he seems to be going through the motions but not really present"]},
-  {t:"How is his energy? Not just physically tired - but that deeper feeling of being completely used up.",s:"The kind of exhaustion that sleep does not fix. The kind where he wakes up already depleted.",a:["Low but manageable - he can still function and find moments of energy","Running lower than you would expect - more than tiredness, something heavier","Genuinely depleted - he is pushing through everything on reserve","He has nothing left - he seems completely emptied out and is functioning on will alone"]},
-  {t:"Has he been able to focus, make decisions, or keep on top of things the way he normally would?",s:"Think about everyday things - getting to work on time, making simple decisions, keeping up with things at home. Does his head seem to be operating the way it used to?",a:["Mostly yes - he is keeping up with things well enough","A bit slower and less sharp than usual but still managing","He is noticeably struggling - concentration and decisions seem much harder than they should be","He is really finding it hard - avoiding decisions or making mistakes he would not normally make"]},
-  {t:"Has he pulled back from things he normally enjoys or people he normally spends time with?",s:"Has he managed to engage with the people and things that used to matter to him, even on a smaller scale? Or has he quietly stepped back without really deciding to?",a:["Not much - he is still engaging with the things and people that matter to him","A little - less motivated but still making the effort","Quite a bit - he has pulled back from a number of things he used to value","Significantly - he has largely withdrawn and the distance feels hard to close"]},
-  {t:"Does he seem hard on himself - like he feels he is failing as a father, a partner, or just as a person?",s:"This can show up as guilt that does not seem to make sense, or a persistent sense that he is not good enough no matter what he does.",a:["No more than he would usually question himself","Occasionally - doubts come but they pass","Frequently - he returns to feelings of not being good enough again and again","Constantly - the sense that he is failing feels persistent and he cannot seem to shake it"]},
-  {t:"Has he mentioned any physical symptoms that seem hard to account for - headaches, back pain, chest tightness, stomach issues?",s:"When someone is under significant pressure, it can present physically in ways that are easy to dismiss. These are worth paying attention to.",a:["Nothing he would flag as out of the ordinary","One or two things that have come up - minor but present","A few persistent things that keep returning and have not been resolved","His body seems to be carrying something - the physical symptoms have become hard to ignore"]},
+  {t:"Over the past while, has your partner been getting wound up or frustrated more easily - by things that would not normally bother him that much?",s:"Think about small everyday things - traffic, noise, a comment that landed wrong, the baby crying. Have his reactions felt different to you recently?",a:["Not really - he seems fairly steady, similar to how he normally is","A little more reactive than usual - I have noticed it but it does not feel alarming","Yes - things seem to get to him in ways that feel out of proportion","Yes - he seems constantly on edge and almost everything triggers a reaction"]},
+  {t:"Have you noticed him snapping at people, losing his temper, or getting angry in a way that does not feel like him?",s:"This might show up as short temper, sarcasm, saying things he would not normally say, or a low-level irritation that does not seem to switch off.",a:["Not particularly - his reactions have felt like his own","Occasionally - more short-tempered than he would normally be","Yes - it is happening regularly and he seems aware of it too","Yes - it is affecting everyone around him and I am genuinely concerned"]},
+  {t:"Does he seem able to switch off and relax when he has the chance?",s:"Even in a quiet moment - does he actually rest, or does he stay tense and restless even when things are calm around him?",a:["Yes - he can generally unwind when he gets the opportunity","It takes longer than it used to but he gets there","He struggles to settle even in moments when he should be able to","He cannot switch off at all - he stays restless regardless of what is happening around him"]},
+  {t:"How has his sleep been - during the time he would normally sleep?",s:"This is not just about broken nights with the baby. When he has the chance to sleep, is he actually able to sleep?",a:["He is managing to get some rest when the opportunity is there","It seems harder than it should be - he struggles even when he could sleep","Sleep is a real issue - he is either unable to sleep or sleeping far more than usual","He is running on very little and it has been this way for some time"]},
+  {t:"Have you noticed him turning to anything more than usual to take the edge off?",s:"This might be alcohol, but it could also be staying out longer, working late, gaming, scrolling, exercise, or anything he seems to reach for when things feel heavy. There is no judgement here - this is about noticing what the pattern might be telling you.",a:["Not really - nothing has noticeably changed in how he manages day to day","Perhaps slightly - I have noticed it but it does not feel like a problem yet","Yes - I have noticed him relying on something to get through and it concerns me","Yes - it has escalated and I think it has become a way of coping rather than a choice"]},
+  {t:"How would you honestly describe his mood on an average day recently?",s:"Not the version he shows at work or to other people. The version you see at home, when the day is done.",a:["Generally holding - up and down but nothing that stays","Flat more often than not - harder to lift than it used to be","Low most of the time - it takes real effort for him to find anything positive","Very low or empty - he seems to be going through the motions but not really present"]},
+  {t:"How is his energy? Not just physically tired - but that deeper feeling of being completely used up.",s:"The kind of exhaustion that sleep does not fix. The kind where he wakes up already depleted.",a:["Low but manageable - he can still function and find moments of energy","Running lower than you would expect - more than tiredness, something heavier","Genuinely depleted - he seems to be pushing through everything on reserve","He has nothing left - he seems completely emptied out and is functioning on will alone"]},
+  {t:"Has he been able to focus, make decisions, or keep on top of things the way he normally would?",s:"Think about everyday things - getting to work on time, keeping up with things at home, making simple decisions. Does his head seem to be operating the way it used to?",a:["Mostly yes - he is keeping up with things well enough","A bit slower and less sharp than usual but still managing","He is noticeably struggling - concentration and decisions seem much harder than they should be","He is really finding it hard - avoiding decisions or making mistakes he would not normally make"]},
+  {t:"Has he pulled back from things he normally enjoys or people he normally spends time with?",s:"Has he managed to engage with the things and people that used to matter to him, even on a smaller scale? Or has he quietly stepped back without really deciding to?",a:["Not much - he is still engaging with the things and people that matter to him","A little - less motivated but still making the effort","Quite a bit - he has pulled back from a number of things he used to value","Significantly - he has largely withdrawn and the distance feels hard to close"]},
+  {t:"Does he seem hard on himself - like he feels he is failing as a father, as a partner, or just as a person?",s:"This can show up as guilt that does not seem to make sense, or a persistent sense that he is not good enough no matter what he does.",a:["No more than he would usually question himself","Occasionally - doubts come but they pass","Frequently - he returns to feelings of not being good enough again and again","Constantly - the sense that he is failing feels persistent and he cannot seem to shake it"]},
+  {t:"Has he mentioned any physical symptoms that seem hard to account for - headaches, back pain, chest tightness, stomach issues?",s:"When someone is under significant pressure, it can present physically in ways that are easy to dismiss. These symptoms are real and worth paying attention to.",a:["Nothing he would flag as out of the ordinary","One or two things that have come up - minor but present","A few persistent things that keep returning and have not been resolved","His body seems to be carrying something - the physical symptoms have become hard to ignore"]},
   {t:"Has he been throwing himself into work, exercise, projects, or keeping constantly busy - to the point where slowing down seems almost impossible for him?",s:"Staying productive is not always a problem. But when the activity becomes something he cannot stop, it can sometimes be because stopping means feeling something he is not ready for.",a:["No more than usual - he can stop and be present when he wants to","A bit busier than normal - I notice it but he can still slow down","He finds it hard to stop - activity seems like the only way he can keep going","He is using it to block things out - the busyness feels deliberate and I think he knows it"]},
-  {t:"Has he ever said anything - even in passing - about not wanting to be here, disappearing, or that everyone would be better off without him?",s:"This is the hardest question. If anything like this has come up - even once, even briefly, even said as if it were nothing - it is worth noting here. You are not overreacting by flagging it.",a:["No - nothing like that has come up","Something passing - a comment that crossed the line but did not stay","More than once - it has come up and it is something I have been holding onto","Yes - it feels serious and I am scared about it"],sensitive:true}
+  {t:"Has he ever said anything - even in passing - about not wanting to be here, disappearing, or that everyone would be better off without him?",s:"This is the hardest question. If anything like this has come up - even once, even briefly, even said as if it were nothing - please note it here. You are not overreacting by flagging it.",a:["No - nothing like that has come up","Something passing - a comment that crossed a line but did not stay","More than once - it has come up and it is something I have been holding onto","Yes - it feels serious and I am frightened by it"],sensitive:true}
 ];
 
 const KS='p2bi-p-scores', KQ='p2bi-p-cq', KC='p2bi-p-ctx', KBD='p2bi-p-bd';
@@ -512,6 +507,7 @@ let totalScore = 0;
 let consentChoice = null;
 let finalConsent = null;
 let safetyAcked = false;
+let contextReturnMode = false;
 
 (function(){
   const s = localStorage.getItem('p2bi-p-theme');
@@ -537,6 +533,16 @@ function dismissBmark(){
 }
 (function(){ if(localStorage.getItem(KBD)==='1'){ const b=document.getElementById('bmarkBanner'); if(b) b.style.display='none'; }})();
 
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const refType = params.get('ref_type') || 'default';
+  const lineEl = document.getElementById('consentOpeningLine');
+  if(!lineEl) return;
+  if(refType === 'clinician'){
+    lineEl.textContent = "Your health visitor shared this with you because they want to make sure your partner has the right support.";
+  }
+})();
+
 function go(n){
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const target = typeof n === 'number' ? document.getElementById('s'+n) : document.getElementById(n);
@@ -549,7 +555,7 @@ function handleStart(){
   else { go('sConsent'); }
 }
 
-function handleConsentNext(){ go(1); }
+function skipContext(){ go(2); }
 
 function pickExpectant(val, el){
   document.querySelectorAll('#expectantYes, #expectantNo').forEach(o => { o.classList.remove('picked'); o.setAttribute('aria-checked','false'); });
@@ -559,12 +565,20 @@ function pickExpectant(val, el){
   saveCtx();
 }
 
+function handleConsentNext(){ go(1); }
+
+function showOptCBanner(){
+  const banner = document.getElementById('optCBanner');
+  if(banner){ banner.style.display = (consentChoice === 'B' || consentChoice === 'C') ? 'block' : 'none'; }
+}
+
 function pickConsent(choice, el){
   consentChoice = choice;
   localStorage.setItem(KCC, choice);
   document.querySelectorAll('#sConsent .consent-option').forEach(o => { o.classList.remove('picked'); o.setAttribute('aria-checked','false'); });
   el.classList.add('picked'); el.setAttribute('aria-checked','true');
   document.getElementById('consentNextBtn').disabled = false;
+  showOptCBanner();
   if(typeof gtag !== 'undefined') gtag('event','partner_consent_opening_selected',{choice:choice});
 }
 
@@ -583,12 +597,24 @@ function pickSafetyAck(){
   else { ack.classList.remove('picked'); box.textContent='\u2713'; box.style.color='transparent'; btn.disabled=true; }
 }
 
+function loadSaved(){
+  try{
+    const ss=localStorage.getItem(KS); const sq=localStorage.getItem(KQ);
+    if(ss){ const p=JSON.parse(ss); if(Array.isArray(p)&&p.length===13) scores=p; }
+    if(sq!==null) currentQ=parseInt(sq)||0;
+    const sc=localStorage.getItem(KC);
+    if(sc){ const ctx=JSON.parse(sc); ['partnerAge','numKids','situation','howlong','support'].forEach(id=>{ const el=document.getElementById(id); if(el&&ctx[id]) el.value=ctx[id]; }); }
+    const cc=localStorage.getItem(KCC); if(cc) consentChoice=cc;
+    if(ss&&scores.some(s=>s!==null)){ document.getElementById('retBanner').style.display='block'; document.getElementById('startBtn').textContent='Continue where I left off'; }
+  }catch(e){}
+}
+
 function saveSc(){ try{ localStorage.setItem(KS,JSON.stringify(scores)); localStorage.setItem(KQ,currentQ); }catch(e){} }
 
 function saveCtx(){
   try{
     const ctx={};
-    ['partnerAge','numKids','situation','support','howlong'].forEach(id=>{ const el=document.getElementById(id); if(el) ctx[id]=el.value; });
+    ['partnerAge','numKids','situation','howlong','support'].forEach(id=>{ const el=document.getElementById(id); if(el) ctx[id]=el.value; });
     localStorage.setItem(KC,JSON.stringify(ctx));
   }catch(e){}
 }
@@ -600,26 +626,26 @@ function showQ(idx){
   document.getElementById('qpf').style.width = (20 + (idx/13)*65) + '%';
   document.getElementById('qpt').textContent = 'Question ' + (idx+1) + ' of 13';
   document.getElementById('qa').innerHTML =
-    `<div class="q-num">Question ${idx+1} of 13</div>` +
-    `<div class="q-text">${q.t}</div>` +
-    (q.s ? `<div class="q-sub">${q.s}</div>` : '') +
-    `<div class="answers" id="an${idx}">` +
-    q.a.map((a,v) => `<div class="answer" onclick="pickA(${idx},${v},this)">${a}</div>`).join('') +
-    `</div>`;
+    '<div class="q-num">Question ' + (idx+1) + ' of 13</div>' +
+    '<div class="q-text">' + q.t + '</div>' +
+    (q.s ? '<div class="q-sub">' + q.s + '</div>' : '') +
+    '<div class="answers" id="an' + idx + '">' +
+    q.a.map(function(a,v){ return '<div class="answer" onclick="pickA(' + idx + ',' + v + ',this)">' + a + '</div>'; }).join('') +
+    '</div>';
   if(scores[idx]!==null){ const opts=document.querySelectorAll('#an'+idx+' .answer'); if(opts[scores[idx]]) opts[scores[idx]].classList.add('picked'); document.getElementById('qnb').disabled=false; }
   else { document.getElementById('qnb').disabled=true; }
   const fl=document.getElementById('sflag');
-  fl.style.display=(q.sensitive && scores[idx]!==null && scores[idx]>=2)?'block':'none';
-  document.getElementById('qbb').style.display = idx===0?'none':'inline-block';
+  fl.style.display=(q.sensitive&&scores[idx]!==null&&scores[idx]>=2)?'block':'none';
+  document.getElementById('qbb').style.display=idx===0?'none':'inline-block';
 }
 
 function pickA(qi, v, el){
   scores[qi]=v;
-  document.querySelectorAll('#an'+qi+' .answer').forEach(a=>a.classList.remove('picked'));
+  document.querySelectorAll('#an'+qi+' .answer').forEach(function(a){ a.classList.remove('picked'); });
   el.classList.add('picked');
   document.getElementById('qnb').disabled=false;
   saveSc();
-  if(QS[qi].sensitive && v>=2) document.getElementById('sflag').style.display='block';
+  if(QS[qi].sensitive&&v>=2) document.getElementById('sflag').style.display='block';
   else document.getElementById('sflag').style.display='none';
   if(typeof gtag !== 'undefined') gtag('event','partner_question_answered',{question_number:qi+1,value:v});
 }
@@ -630,36 +656,36 @@ function prevQ(){ if(currentQ>0){ currentQ--; saveSc(); showQ(currentQ); } }
 function getBand(s){
   if(s<=12) return{cls:'green',h:'What you have shared does not point to serious concern right now',m:'Based on what you have described, the patterns you are seeing do not indicate significant clinical concern at this moment. That does not mean everything is easy or that your instinct was wrong. It means that right now the signs are within a range where awareness and gentle support can help.',o:'You came here because you cared enough to look. That matters. Keep paying attention. If things change, come back.',cta:'light'};
   if(s<=26) return{cls:'amber',h:'What you are seeing is real and it deserves attention',m:'What you have described points to a level of difficulty that is clinically significant. This is not just the pressure of new fatherhood. These are patterns that, left unaddressed, tend to deepen - and you have noticed them at a point where something can still be done.',o:'You do not have to wait until it gets worse to act. What you are seeing right now is exactly the point at which the right support can make a real difference.',cta:'medium'};
-  return{cls:'red',h:'What you are seeing is serious - please do not wait',m:'What you have described suggests your partner is carrying a significant level of difficulty. This is not something to hope will pass or manage quietly. He needs support - and so do you, as the person who has been carrying this awareness.',o:'You have been holding this on your own. You do not have to any more. The most important thing you can do today is get him in front of his GP - and make sure someone knows you are not coping either.',cta:'urgent'};
+  return{cls:'red',h:'What you are seeing is serious - please do not wait',m:'What you have described suggests your partner is carrying a significant level of difficulty. This is not something to hope will pass. He needs support - and so do you, as the person who has been carrying this awareness.',o:'You have been holding this on your own. You do not have to any more. The most important thing you can do today is get him in front of his GP - and make sure someone knows you are not coping either.',cta:'urgent'};
 }
 
 function buildResult(){
-  totalScore = scores.reduce((a,b)=>a+(b||0),0);
+  totalScore = scores.reduce(function(a,b){ return a+(b||0); },0);
   const band = getBand(totalScore);
   document.getElementById('rScore').textContent = totalScore;
   document.getElementById('rLabel').textContent = 'out of 39';
   document.getElementById('rBand').innerHTML =
-    `<div class="result-card ${band.cls}"><h3>${band.h}</h3><p>${band.m}</p></div>` +
-    `<div class="body-text" style="margin-top:0.5rem"><strong style="color:var(--text)">What this means for you:</strong> ${band.o}</div>`;
+    '<div class="result-card ' + band.cls + '"><h3>' + band.h + '</h3><p>' + band.m + '</p></div>' +
+    '<div class="body-text" style="margin-top:0.5rem"><strong style="color:var(--text)">What this means for you:</strong> ' + band.o + '</div>';
 
   const su = document.getElementById('support').value;
   const si = document.getElementById('situation').value;
   const hl = document.getElementById('howlong').value;
-  let flags = [];
+  var flags = [];
   if(su==='isolated') flags.push('You are carrying this awareness on your own and that is a significant weight. Watching someone you love struggle - and not knowing what to do - is one of the loneliest experiences a partner can have. You deserve support too, not just him.');
   if(si==='Separated or divorcing') flags.push('Noticing these signs while also navigating a separation adds a layer of complexity that most resources do not acknowledge. What you are managing is genuinely hard and it is right that you reached out.');
   if(hl==='months') flags.push('You have been holding this for a few months or more. That is a long time to carry something this heavy without a name for it. What you have done today by completing this matters.');
   document.getElementById('rFlags').innerHTML = flags.length>0 ?
-    `<div class="divider"></div><div class="label-tag">A few things we want you to know</div>` +
-    flags.map(f=>`<div class="flag-card"><p>${f}</p></div>`).join('') : '';
+    '<div class="divider"></div><div class="label-tag">A few things we want you to know</div>' +
+    flags.map(function(f){ return '<div class="flag-card"><p>' + f + '</p></div>'; }).join('') : '';
 
-  let steps = '';
+  var steps = '';
   if(band.cta==='light'){
-    steps=`<div class="divider"></div><div class="label-tag">What you might do next</div><div class="next-card"><h4>Keep paying attention</h4><p>Your instinct brought you here. Trust it. If things change, come back. The patterns that develop into something serious often start quietly.</p></div><div class="next-card"><h4>Free resources for partners</h4><p>The 7 Signs Guide gives you language for what to look for and words to start the conversation. Free at Parents2Be International.</p></div>`;
+    steps='<div class="divider"></div><div class="label-tag">What you might do next</div><div class="next-card"><h4>Keep paying attention</h4><p>Your instinct brought you here. Trust it. If things change, come back. The patterns that develop into something serious often start quietly.</p></div><div class="next-card"><h4>The free 7 Signs Guide</h4><p>Names what you might be seeing in plain language and gives you words to start the conversation. Free at parents2beintl.com.</p></div>';
   } else if(band.cta==='medium'){
-    steps=`<div class="divider"></div><div class="label-tag">What we would suggest</div><div class="next-card"><h4>Share what you have noticed - gently</h4><p>You do not need to have a clinical conversation. "I have been worried about you and I want to make sure you are okay" is enough to open the door.</p></div><div class="next-card"><h4>Share the free assessment with him</h4><p>The father-facing version of this assessment is free and takes under five minutes. It might be easier for him to see it himself than to hear it from you first.</p></div><div class="next-card"><h4>His GP - sooner rather than later</h4><p>You can encourage him to go, or offer to go with him. He does not need to use the word depression before he walks in the door.</p></div>`;
+    steps='<div class="divider"></div><div class="label-tag">What we would suggest</div><div class="next-card"><h4>Share what you have noticed - gently</h4><p>You do not need to have a clinical conversation. "I have been worried about you and I want to make sure you are okay" is enough to open the door.</p></div><div class="next-card"><h4>Share the free assessment with him</h4><p>The father-facing version of this assessment is free and takes under five minutes. It might be easier for him to see it himself than to hear it from you first.</p></div><div class="next-card"><h4>His GP - sooner rather than later</h4><p>You can encourage him to go, or offer to go with him. He does not need to use the word depression before he walks in the door.</p></div>';
   } else {
-    steps=`<div class="divider"></div><div class="label-tag">Please do not sit on this</div><div class="next-card"><h4>His GP - this week, today if you can</h4><p>Call on his behalf if he will let you. Tell them he is a new father and he is not coping. Those words are enough.</p></div><div class="next-card"><h4>Samaritans - 116 123</h4><p>Free. 24 hours. For him, for you, or for both of you together. You do not have to be at the edge to call.</p></div><div class="next-card"><h4>You need support too</h4><p>Contact your own GP and tell them what you have been carrying. What you are experiencing as the witness matters and deserves care.</p></div>`;
+    steps='<div class="divider"></div><div class="label-tag">Please do not sit on this</div><div class="next-card"><h4>His GP - this week, today if you can</h4><p>Call on his behalf if he will let you. Tell them he is a new father and he is not coping. Those words are enough.</p></div><div class="next-card"><h4>Samaritans - 116 123</h4><p>Free. 24 hours. For him, for you, or for both of you together. You do not have to be at the edge to call.</p></div><div class="next-card"><h4>You need support too</h4><p>Contact your own GP and tell them what you have been carrying. What you are experiencing as the witness matters and deserves care.</p></div>';
   }
   document.getElementById('rSteps').innerHTML = steps;
   clearSaved();
@@ -692,8 +718,8 @@ function buildConsentReview(){
     });
   }
   if(reviewFooter){
-    reviewFooter.textContent = (choice==='B'||choice==='C') ?
-      'I have seen my responses and I am choosing to keep them private for now. I understand that any score indicating a clinical concern is something I should act on.' :
+    reviewFooter.textContent=(choice==='B'||choice==='C')?
+      'I have seen my responses and I am choosing to keep them private for now. I understand that any score indicating clinical concern is something I should act on.' :
       'Your responses will be sent privately and securely to the clinician who referred you.';
   }
   if(confirmBtn) confirmBtn.style.display='block';
@@ -729,15 +755,15 @@ function submitEmail(){
   if(!email||!email.includes('@')){ document.getElementById('emailIn').style.borderColor='#C62828'; return; }
   fetch('https://connect.mailerlite.com/api/subscribers',{
     method:'POST',
-    headers:{'Content-Type':'application/json','Authorization':'Bearer API KEY GOES HERE'},
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '},
     body:JSON.stringify({
       email:email,
       groups:['183382916886169384'],
       fields:{ assessment_score:totalScore, assessment_band:getBand(totalScore).cls, consent_type:finalConsent||'C' }
     })
   })
-  .then(()=>showRes(true))
-  .catch(()=>showRes(true));
+  .then(function(){ showRes(true); })
+  .catch(function(){ showRes(true); });
 }
 
 function skipEmail(){ showRes(false); }
@@ -747,26 +773,14 @@ function showRes(withEmail){
   const band=getBand(totalScore);
   document.getElementById('rRes').style.display='block';
   document.getElementById('rRes').innerHTML=
-    `<div class="divider"></div><div class="label-tag">Resources</div>`+
+    '<div class="divider"></div><div class="label-tag">Resources</div>'+
     (withEmail?'<p class="body-text" style="color:var(--rg-bd);font-weight:500">Your results are on their way. Check your inbox.</p>':'')+
-    `<div class="next-card"><h4>The 7 Signs Guide - free</h4><p>Names what you might be seeing in plain language. Free at <a href="https://parents2beintl.com" style="color:var(--gold-dark);text-decoration:none">parents2beintl.com</a></p></div>`+
-    `<div class="next-card" style="border-color:var(--gold)"><h4>The father-facing assessment</h4><p>Free, anonymous, takes under five minutes. Share the link with him when the moment feels right. <a href="https://parents2beintl-hue.github.io/parents2be-assessment" style="color:var(--gold-dark);font-weight:500;text-decoration:none">parents2beintl-hue.github.io/parents2be-assessment</a></p></div>`+
-    `<div class="next-card"><h4>Samaritans - 116 123</h4><p>Free. 24 hours. For him, for you, or for both of you. No pressure to have the right words.</p></div>`+
-    `<div style="margin-top:1.2rem;display:flex;gap:10px;flex-wrap:wrap">`+
-    `<button class="btn btn-gold" onclick="window.location.href='https://parents2beintl.com'">Visit Parents2Be International</button></div>`;
-  if(typeof gtag !== 'undefined') gtag('event', withEmail?'partner_email_captured':'partner_email_skipped',{score:totalScore});
-}
-
-function loadSaved(){
-  try{
-    const ss=localStorage.getItem(KS); const sq=localStorage.getItem(KQ);
-    if(ss){ const p=JSON.parse(ss); if(Array.isArray(p)&&p.length===13) scores=p; }
-    if(sq!==null) currentQ=parseInt(sq)||0;
-    const sc=localStorage.getItem(KC);
-    if(sc){ const ctx=JSON.parse(sc); ['partnerAge','numKids','situation','support','howlong'].forEach(id=>{ const el=document.getElementById(id); if(el&&ctx[id]) el.value=ctx[id]; }); }
-    const cc=localStorage.getItem(KCC); if(cc) consentChoice=cc;
-    if(ss&&scores.some(s=>s!==null)){ document.getElementById('retBanner').style.display='block'; document.getElementById('startBtn').textContent='Continue where I left off'; }
-  }catch(e){}
+    '<div class="next-card"><h4>The free 7 Signs Guide</h4><p>Names what you might be seeing in plain language. Free at <a href="https://parents2beintl.com" style="color:var(--gold-dark);text-decoration:none">parents2beintl.com</a></p></div>'+
+    '<div class="next-card" style="border-color:var(--gold)"><h4>The father-facing assessment</h4><p>Free, anonymous, takes under five minutes. Share the link with him when the moment feels right. <a href="https://parents2beintl-hue.github.io/parents2be-assessment" style="color:var(--gold-dark);font-weight:500;text-decoration:none">parents2beintl-hue.github.io/parents2be-assessment</a></p></div>'+
+    '<div class="next-card"><h4>Samaritans - 116 123</h4><p>Free. 24 hours. For him, for you, or for both of you. No pressure to have the right words.</p></div>'+
+    '<div style="margin-top:1.2rem;display:flex;gap:10px;flex-wrap:wrap">'+
+    '<button class="btn btn-gold" onclick="window.location.href=\'https://parents2beintl.com\'">Visit Parents2Be International</button></div>';
+  if(typeof gtag !== 'undefined') gtag('event',withEmail?'partner_email_captured':'partner_email_skipped',{score:totalScore});
 }
 
 loadSaved();

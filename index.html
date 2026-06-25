@@ -1,1 +1,775 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Is He Doing? - Parents2Be International</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0KTPZJX8Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E0KTPZJX8Z');
+</script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #C9A84C; --gold-dark: #8B6914;
+  --bg: #FFFFFF; --bg2: #F8F6F1; --bg3: #F0EDE6;
+  --text: #111111; --text2: #444444; --text3: #666666; --text4: #767676;
+  --border: #DDDDDD; --border2: #CCCCCC;
+  --topbar-bg: #111111; --topbar-sub: #b3b3b3;
+  --promise-bg: #FDFBF6;
+  --answer-bg: #FAFAFA; --answer-hover: #FDFBF6;
+  --answer-picked-bg: #111111; --answer-picked-text: #FFFFFF;
+  --rg-bg: #F7FBF7; --rg-bd: #2E7D32;
+  --ra-bg: #FDFBF6; --ra-bd: #C9A84C;
+  --rr-bg: #FFF5F5; --rr-bd: #C62828;
+  --email-bg: #111111; --email-text: #FFFFFF; --email-sub: #b3b3b3;
+  --email-inp-bg: #1A1A1A; --email-inp-bd: #444444; --email-inp-text: #FFFFFF;
+  --footer-text: #767676;
+  --score-bd: #111111; --score-bg: #F8F6F1;
+  --notice-bg: #FAFAFA; --next-bg: #FFFFFF;
+  --flag-bg: #FFF8F0; --flag-bd: #C9A84C;
+  --safe-bg: #FFF5F5; --safe-bd: #FFCDD2; --safe-text: #444444; --safe-link: #C62828;
+  --bmark-bg: #111111; --bmark-text: #FFFFFF; --bmark-sub: #b3b3b3;
+  --ret-bg: #FDFBF6; --ret-bd: #C9A84C;
+  --consent-border: #DDDDDD; --consent-picked: #111111; --consent-picked-text: #FFFFFF;
+  --safety-bg: #FFF5F5; --safety-bd: #C62828;
+}
+[data-theme="dark"] {
+  --bg: #0F0F0F; --bg2: #1A1A1A; --bg3: #222222;
+  --text: #F0EDE6; --text2: #CCCCCC; --text3: #AAAAAA; --text4: #b3b3b3;
+  --border: #333333; --border2: #444444;
+  --topbar-bg: #000000; --topbar-sub: #b3b3b3;
+  --promise-bg: #1A1A1A;
+  --answer-bg: #1A1A1A; --answer-hover: #222222;
+  --answer-picked-bg: #C9A84C; --answer-picked-text: #111111;
+  --rg-bg: #0F1F0F; --rg-bd: #4CAF50;
+  --ra-bg: #1A1500; --ra-bd: #C9A84C;
+  --rr-bg: #1F0F0F; --rr-bd: #EF5350;
+  --email-bg: #1A1A1A; --email-text: #F0EDE6; --email-sub: #b3b3b3;
+  --email-inp-bg: #111111; --email-inp-bd: #333333; --email-inp-text: #F0EDE6;
+  --footer-text: #b3b3b3;
+  --score-bd: #C9A84C; --score-bg: #1A1A1A;
+  --notice-bg: #1A1A1A; --next-bg: #1A1A1A;
+  --flag-bg: #1A1500; --flag-bd: #C9A84C;
+  --safe-bg: #1F0F0F; --safe-bd: #EF5350; --safe-text: #CCCCCC; --safe-link: #EF5350;
+  --bmark-bg: #1A1A1A; --bmark-text: #F0EDE6; --bmark-sub: #b3b3b3;
+  --ret-bg: #1A1500; --ret-bd: #C9A84C;
+  --consent-border: #333333; --consent-picked: #C9A84C; --consent-picked-text: #111111;
+  --safety-bg: #1F0F0F; --safety-bd: #EF5350;
+}
+html, body { background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; min-height: 100vh; transition: background 0.3s, color 0.3s; }
+.page { max-width: 620px; margin: 0 auto; padding: 0 1.4rem 5rem; background: var(--bg); }
+.topbar { background: var(--topbar-bg); padding: 0.9rem 1.4rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.topbar-brand { font-family: 'Montserrat', sans-serif; font-size: 15px; color: var(--gold); text-decoration: none; }
+.topbar-right { display: flex; align-items: center; gap: 12px; }
+.topbar-tag { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--topbar-sub); }
+.mode-btn { background: transparent; border: 1px solid #444; color: #b3b3b3; font-size: 11px; padding: 4px 10px; cursor: pointer; font-family: 'Montserrat', sans-serif; transition: all 0.2s; }
+.mode-btn:hover { border-color: var(--gold); color: var(--gold); }
+.bmark-banner { background: var(--bmark-bg); border-bottom: 2px solid var(--gold); padding: 0.9rem 1.4rem; }
+.bmark-inner { max-width: 620px; margin: 0 auto; display: flex; align-items: flex-start; gap: 0.9rem; }
+.bmark-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.bmark-txt h4 { font-size: 13px; font-weight: 500; color: var(--bmark-text); margin-bottom: 3px; }
+.bmark-txt p { font-size: 12px; color: var(--bmark-sub); line-height: 1.5; }
+.bmark-dismiss { background: none; border: none; color: #b3b3b3; font-size: 20px; cursor: pointer; padding: 0; margin-left: auto; flex-shrink: 0; line-height: 1; }
+.bmark-dismiss:hover { color: var(--gold); }
+.ret-banner { border-left: 4px solid var(--ret-bd); background: var(--ret-bg); padding: 1rem 1.2rem; margin: 1.4rem 0; display: none; }
+.ret-banner h4 { font-family: 'Montserrat', sans-serif; font-size: 16px; color: var(--text); margin-bottom: 4px; }
+.ret-banner p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+.progress-wrap { padding: 1rem 0 0; margin-bottom: 0.5rem; }
+.progress-track { height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--gold); transition: width 0.5s; }
+.progress-text { font-size: 11px; color: var(--text4); margin-top: 5px; }
+.screen { display: none; }
+.screen.active { display: block; }
+.section { padding-top: 2rem; }
+.label-tag { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; margin-bottom: 6px; }
+h1 { font-family: 'Montserrat', sans-serif; font-size: 28px; line-height: 1.2; color: var(--text); margin-bottom: 0.8rem; }
+h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; color: var(--text); margin-bottom: 0.7rem; }
+.lead { font-size: 16px; color: var(--text2); line-height: 1.65; margin-bottom: 1.2rem; }
+.body-text { font-size: 14px; color: var(--text3); line-height: 1.6; margin-bottom: 1rem; }
+.quiet { font-size: 12px; color: var(--text4); line-height: 1.6; }
+.promise { border-left: 3px solid var(--gold); padding: 0.9rem 1rem; margin: 1.2rem 0; background: var(--promise-bg); }
+.promise p { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 0.4rem; }
+.promise p:last-child { margin-bottom: 0; }
+.field-group { margin-bottom: 1rem; }
+.field-label { font-size: 13px; color: var(--text2); margin-bottom: 5px; display: block; font-weight: 500; }
+.field-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border); font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(--answer-bg); color: var(--text); appearance: none; -webkit-appearance: none; border-radius: 0; transition: border-color 0.15s; }
+.field-input:focus { outline: none; border-color: var(--gold); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.q-num { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text4); margin-bottom: 6px; }
+.q-text { font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 1.4; color: var(--text); margin-bottom: 0.8rem; }
+.q-sub { font-size: 13px; color: var(--text3); margin-bottom: 1rem; line-height: 1.5; }
+.answers { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.5rem; }
+.answer { padding: 12px 16px; border: 1px solid var(--border); background: var(--answer-bg); cursor: pointer; font-size: 14px; color: var(--text2); line-height: 1.45; transition: all 0.15s; user-select: none; -webkit-tap-highlight-color: transparent; }
+.answer:hover { border-color: var(--gold); background: var(--answer-hover); }
+.answer.picked { border-color: var(--answer-picked-bg); background: var(--answer-picked-bg); color: var(--answer-picked-text); }
+.divider { height: 1px; background: var(--border); margin: 1.4rem 0; }
+.btn-row { display: flex; gap: 10px; align-items: center; margin-top: 1.4rem; flex-wrap: wrap; }
+.btn { padding: 12px 26px; font-size: 14px; font-family: 'Montserrat', sans-serif; font-weight: 500; cursor: pointer; border: 1.5px solid var(--text); background: transparent; color: var(--text); letter-spacing: 0.03em; transition: all 0.15s; text-decoration: none; display: inline-block; }
+.btn:hover { background: var(--bg2); }
+.btn-dark { background: var(--text); color: var(--bg); border-color: var(--text); }
+.btn-dark:hover { background: var(--gold); border-color: var(--gold); color: #111111; }
+.btn-gold { background: var(--gold); border-color: var(--gold); color: #111111; }
+.btn-gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: #FFFFFF; }
+.btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.btn-back { font-size: 13px; color: var(--text4); background: none; border: none; cursor: pointer; padding: 8px 0; font-family: 'Montserrat', sans-serif; }
+.btn-back:hover { color: var(--text); }
+.notice { font-size: 12px; color: var(--text3); line-height: 1.6; padding: 10px 12px; border: 1px solid var(--border); background: var(--notice-bg); margin-bottom: 1.2rem; }
+.score-reveal { text-align: center; padding: 2rem 1rem; border: 2px solid var(--score-bd); margin-bottom: 1.4rem; background: var(--score-bg); }
+.score-reveal-num { font-family: 'Montserrat', sans-serif; font-size: 64px; line-height: 1; color: var(--text); }
+.score-reveal-label { font-size: 13px; color: var(--text4); margin-top: 4px; }
+.result-card { padding: 1.2rem 1.4rem; margin-bottom: 1.2rem; border-left: 4px solid var(--gold); background: var(--ra-bg); }
+.result-card.green { border-left-color: var(--rg-bd); background: var(--rg-bg); }
+.result-card.amber { border-left-color: var(--ra-bd); background: var(--ra-bg); }
+.result-card.red   { border-left-color: var(--rr-bd); background: var(--rr-bg); }
+.result-card h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; color: var(--text); margin-bottom: 6px; }
+.result-card p { font-size: 14px; color: var(--text2); line-height: 1.65; }
+.next-card { border: 1px solid var(--border); padding: 1.2rem 1.4rem; margin-bottom: 0.9rem; background: var(--next-bg); }
+.next-card h4 { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 5px; }
+.next-card p { font-size: 13px; color: var(--text3); line-height: 1.55; }
+.email-block { background: var(--email-bg); padding: 1.6rem; margin: 1.4rem 0; border: 1px solid var(--border); }
+.email-block h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: var(--email-text); margin-bottom: 8px; }
+.email-block p { font-size: 13px; color: var(--email-sub); line-height: 1.7; margin-bottom: 1rem; }
+.email-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.email-input { flex: 1; min-width: 200px; padding: 10px 12px; border: 1px solid var(--email-inp-bd); background: var(--email-inp-bg); color: var(--email-inp-text); font-family: 'Montserrat', sans-serif; font-size: 14px; border-radius: 0; }
+.email-input::placeholder { color: #b3b3b3; }
+.email-input:focus { outline: none; border-color: var(--gold); }
+.email-skip { font-size: 12px; color: var(--email-sub); cursor: pointer; text-decoration: underline; margin-top: 0.8rem; display: inline-block; background: none; border: none; font-family: 'Montserrat', sans-serif; }
+.email-skip:hover { color: var(--gold); }
+.soft-flag { background: var(--safe-bg); border: 1px solid var(--safe-bd); padding: 1rem 1.2rem; margin: 1rem 0; display: none; }
+.soft-flag p { font-size: 13px; color: var(--safe-text); line-height: 1.6; }
+.soft-flag a { color: var(--safe-link); font-weight: 500; text-decoration: none; }
+.flag-card { padding: 1rem 1.2rem; margin-bottom: 0.7rem; border-left: 3px solid var(--flag-bd); background: var(--flag-bg); }
+.flag-card p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+.page-footer { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--border); font-size: 11px; color: var(--footer-text); line-height: 1.7; }
+.page-footer a { color: var(--footer-text); text-decoration: underline; }
+.consent-intro { font-size: 15px; color: var(--text2); line-height: 1.75; margin-bottom: 1.4rem; }
+.consent-intro p { margin-bottom: 0.9rem; }
+.consent-intro p:last-child { margin-bottom: 0; }
+.consent-options-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text4); margin-bottom: 0.8rem; font-weight: 500; }
+.consent-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.4rem; }
+.consent-option { border: 1.5px solid var(--consent-border); padding: 14px 16px; cursor: pointer; display: flex; gap: 14px; align-items: flex-start; transition: border-color 0.15s, background 0.15s; background: var(--answer-bg); user-select: none; -webkit-tap-highlight-color: transparent; }
+.consent-option:hover { border-color: var(--gold); background: var(--answer-hover); }
+.consent-option.picked { border-color: var(--consent-picked); background: var(--consent-picked); }
+.consent-option.picked .consent-opt-letter { color: var(--consent-picked-text); opacity: 0.7; }
+.consent-option.picked .consent-opt-text { color: var(--consent-picked-text); }
+.consent-opt-letter { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--text4); min-width: 20px; padding-top: 2px; }
+.consent-opt-text { font-size: 14px; color: var(--text2); line-height: 1.6; }
+.consent-footnote { font-size: 12px; color: var(--text4); line-height: 1.65; font-style: italic; margin-top: 0.8rem; }
+.consent-review-choice { border-left: 3px solid var(--gold); padding: 0.9rem 1rem; margin: 1rem 0; background: var(--promise-bg); font-size: 14px; color: var(--text2); line-height: 1.6; }
+.consent-review-choice strong { color: var(--text); }
+.safety-screen { background: var(--safety-bg); border: 2px solid var(--safety-bd); padding: 1.4rem 1.6rem; margin: 1.4rem 0; }
+.safety-screen h2 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: var(--text); margin-bottom: 0.8rem; }
+.safety-screen p { font-size: 14px; color: var(--safe-text); line-height: 1.7; margin-bottom: 0.8rem; }
+.safety-screen .crisis-line { font-weight: 500; color: var(--text); }
+.safety-screen a { color: var(--safe-link); font-weight: 500; text-decoration: none; }
+.safety-ack { display: flex; gap: 12px; align-items: flex-start; margin: 1.2rem 0 0.8rem; padding: 12px 14px; border: 1.5px solid var(--safety-bd); background: var(--bg); cursor: pointer; }
+.safety-ack.picked { background: var(--safety-bd); }
+.safety-ack.picked .safety-ack-text { color: #FFFFFF; }
+.safety-ack-box { width: 18px; height: 18px; border: 1.5px solid var(--safety-bd); min-width: 18px; margin-top: 2px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: transparent; }
+.safety-ack.picked .safety-ack-box { background: var(--safety-bd); color: #FFFFFF; border-color: var(--safety-bd); }
+.safety-ack-text { font-size: 14px; color: var(--text2); line-height: 1.5; }
+.skip-link { position: absolute; top: -100px; left: 0; background: var(--gold); color: #111111; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; z-index: 9999; transition: top 0.2s; }
+.skip-link:focus { top: 0; }
+.consent-option:focus, .answer:focus { outline: 3px solid var(--gold); outline-offset: 2px; }
+.btn:focus, .btn-dark:focus, .btn-gold:focus, .btn-back:focus, .mode-btn:focus { outline: 3px solid var(--gold); outline-offset: 2px; }
+.field-input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+@media (prefers-contrast: high) {
+  :root { --gold: #7A5C00; --border: #000000; --text2: #000000; --text3: #111111; }
+  .answer, .consent-option { border-width: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  .progress-fill { transition: none !important; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 24px; } h2 { font-size: 19px; } .q-text { font-size: 17px; }
+  .field-row { grid-template-columns: 1fr; } .score-reveal-num { font-size: 52px; }
+  .bmark-inner { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
 
+<a href="#mainContent" class="skip-link">Skip to assessment</a>
+
+<div class="bmark-banner" id="bmarkBanner">
+  <div class="bmark-inner">
+    <div class="bmark-icon">&#9873;</div>
+    <div class="bmark-txt">
+      <h4>Bookmark this page before you begin</h4>
+      <p>Your answers are saved privately on this device. If you close the browser and come back, everything will still be here.</p>
+    </div>
+    <button class="bmark-dismiss" onclick="dismissBmark()" aria-label="Dismiss">&#215;</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a href="https://parents2beintl.com" class="topbar-brand">Parents2Be International</a>
+  <div class="topbar-right">
+    <span class="topbar-tag">For mothers and partners</span>
+    <button class="mode-btn" id="modeBtn" onclick="toggleMode()" aria-label="Toggle dark and light display mode">Dark mode</button>
+  </div>
+</div>
+
+<div class="page" id="mainContent" role="main" aria-label="Partner Observation Assessment">
+
+  <!-- SCREEN 0: LANDING -->
+  <div class="screen active" id="s0">
+    <div class="section">
+      <div class="ret-banner" id="retBanner">
+        <h4>We are really glad you have come back.</h4>
+        <p>Take all the time you need. Your answers are exactly where you left them.</p>
+      </div>
+      <div class="label-tag">Parents2Be International</div>
+      <h1>How has your partner been doing lately?</h1>
+      <p class="lead">You are here because something has felt off and you are trying to understand what you are seeing. That instinct matters. This is a quiet space for you to share what you have noticed - honestly, without judgment, and without it having to be perfectly formed.</p>
+      <div class="promise">
+        <p>This takes about five minutes.</p>
+        <p>Your answers are saved privately on this device. You can stop and come back at any point.</p>
+        <p>At the end you will get a clearer picture of what might be happening - and what, if anything, you might want to do next. That part is always your choice.</p>
+      </div>
+      <p class="body-text">A lot of partners notice something is wrong before the father does. They watch, they worry, they wait - and often they have no language for what they are seeing and no one to ask. This tool exists because that should not have to happen.</p>
+      <p class="quiet">Built by Sarah Bailey, Founder of Parents2Be International. NHS eLfH Perinatal Mental Health trained. This is not a clinical diagnosis. It is a starting point for getting the right support.</p>
+      <div class="divider"></div>
+      <div class="btn-row">
+        <button class="btn btn-dark" id="startBtn" onclick="handleStart()" aria-label="Start the assessment">I am ready - let us do this</button>
+      </div>
+      <div style="margin-top:0.8rem">
+        <span class="quiet">Want to understand more first?</span>
+        <a href="https://parents2beintl.com" style="font-size:13px;color:var(--gold-dark);margin-left:6px;text-decoration:none">Visit our site</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN CONSENT -->
+  <div class="screen" id="sConsent">
+    <div class="section">
+      <div class="label-tag">Before you begin</div>
+      <h2>You are not alone in noticing this</h2>
+      <div class="consent-intro">
+        <p id="consentOpeningLine">You are here because you care about him - and because something in you has been quietly wondering whether what you are seeing is more than tiredness or stress.</p>
+        <p>What you are noticing matters. Partners are often the first to see the signs - long before a father would name them himself. This assessment gives you a way to put words to what you have been observing.</p>
+        <p>Your responses will not go in anyone's medical record, will not be shared without your permission, and will not affect any decisions about your family.</p>
+        <p><strong>This is for you, so you can help him.</strong></p>
+        <p>Before you begin, please choose how you would like your responses handled.</p>
+      </div>
+      <div class="consent-options-label">Choose one option to continue</div>
+      <div class="consent-options">
+        <div class="consent-option" id="cOptA" onclick="pickConsent('A',this)" role="radio" aria-checked="false" aria-label="Option A: Share responses with the referring clinician" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){pickConsent('A',this);event.preventDefault();}">
+          <div class="consent-opt-letter">A</div>
+          <div class="consent-opt-text">Share my responses with the health visitor or clinician who referred me, so they have the full picture. My responses will be sent to them privately and securely.</div>
+        </div>
+        <div class="consent-option" id="cOptB" onclick="pickConsent('B',this)" role="radio" aria-checked="false" aria-label="Option B: Keep responses anonymous" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){pickConsent('B',this);event.preventDefault();}">
+          <div class="consent-opt-letter">B</div>
+          <div class="consent-opt-text">Keep my responses anonymous. My score will be recorded without any identifying information to help improve support for other families - not shared with anyone.</div>
+        </div>
+        <div class="consent-option" id="cOptC" onclick="pickConsent('C',this)" role="radio" aria-checked="false" aria-label="Option C: Keep completely private" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){pickConsent('C',this);event.preventDefault();}">
+          <div class="consent-opt-letter">C</div>
+          <div class="consent-opt-text">Keep everything completely private. I understand that only the fact I completed the assessment will be recorded - nothing identifiable, no score, no responses.</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-dark" id="consentNextBtn" onclick="handleConsentNext()" disabled>Begin assessment</button>
+      </div>
+      <p class="consent-footnote">After the assessment, if you would like to change your choice, you will have the opportunity to do so - you will not need to start again.</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 1: CONTEXT -->
+  <div class="screen" id="s1">
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" style="width:8%"></div></div>
+      <div class="progress-text">Getting started</div>
+    </div>
+    <div class="section">
+      <div class="label-tag">A little context</div>
+      <h2>A few quick things to help us give you more relevant information</h2>
+      <p class="body-text">None of this is required. These details help us understand your situation better - they are never shared and never stored against your name.</p>
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label" for="partnerAge">Your partner's age</label>
+          <select class="field-input" id="partnerAge" onchange="saveCtx()">
+            <option value="">Please select</option>
+            <option>20 to 25</option><option>25 to 30</option><option>30 to 35</option>
+            <option>35 to 40</option><option>40 to 45</option><option>45 and over</option>
+            <option value="nts">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Is your baby not yet born?</label>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px;">
+            <div class="answer" id="expectantYes" onclick="pickExpectant('yes',this)" role="radio" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){pickExpectant('yes',this);event.preventDefault();}">Yes - we are still expecting</div>
+            <div class="answer" id="expectantNo" onclick="pickExpectant('no',this)" role="radio" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){pickExpectant('no',this);event.preventDefault();}">No - our baby has arrived</div>
+          </div>
+          <div id="expectantNote" style="display:none;margin-top:10px;border-left:3px solid var(--gold);padding:0.7rem 1rem;background:var(--promise-bg);font-size:13px;color:var(--text2);line-height:1.6;">This assessment is relevant during pregnancy too. What you are noticing now is worth taking seriously.</div>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label" for="numKids">Number of children</label>
+          <select class="field-input" id="numKids" onchange="saveCtx()">
+            <option value="">Please select</option>
+            <option>1 - this is our first</option><option>2</option><option>3</option><option>4 or more</option>
+            <option value="nts">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="situation">Your situation</label>
+          <select class="field-input" id="situation" onchange="saveCtx()">
+            <option value="">Please select</option>
+            <option>Married</option><option>Co-habiting partner</option>
+            <option>Co-parenting - not living together</option>
+            <option>Separated or divorcing</option>
+            <option value="nts">Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="support">Do you have people around you right now - friends, family, anyone you can talk to?</label>
+        <select class="field-input" id="support" onchange="saveCtx()">
+          <option value="">Please select</option>
+          <option value="good">Yes - people I can actually talk to</option>
+          <option value="limited">A few people but not always available when I need them</option>
+          <option value="isolated">Not really - I am mostly carrying this on my own</option>
+          <option value="nts">Prefer not to say</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="howlong">How long have you been noticing something might be wrong?</label>
+        <select class="field-input" id="howlong" onchange="saveCtx()">
+          <option value="">Please select</option>
+          <option value="recent">A few days or a week or two</option>
+          <option value="weeks">Several weeks</option>
+          <option value="months">A few months or more</option>
+          <option value="nts">Prefer not to say</option>
+        </select>
+      </div>
+      <div class="notice">What you have been carrying as the person watching this matters too. Your own wellbeing is part of this picture.</div>
+      <div class="divider"></div>
+      <div class="btn-row">
+        <button class="btn-back" onclick="go('sConsent')">Back</button>
+        <button class="btn btn-dark" onclick="go(2)">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: PRE-ASSESSMENT BRIEFING -->
+  <div class="screen" id="s2">
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" style="width:18%"></div></div>
+      <div class="progress-text">About to begin</div>
+    </div>
+    <div class="section">
+      <div class="label-tag">Before you start</div>
+      <h2>These questions are about what you have actually been noticing in your partner</h2>
+      <p class="lead">There are 13 questions. Each one asks you to think honestly about what you have been observing - not what you hope is happening, and not the best version of things.</p>
+      <div class="promise">
+        <p>There are no wrong answers here. What you have noticed is valid.</p>
+        <p>Some questions might feel uncomfortable - especially if what you have been seeing has been worrying you. Take your time.</p>
+        <p>If you need to stop, your answers are saved. Come back whenever you are ready.</p>
+      </div>
+      <div class="btn-row">
+        <button class="btn-back" onclick="go(1)">Back</button>
+        <button class="btn btn-dark" onclick="go(3);showQ(currentQ)">I am ready - begin</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: QUESTIONS -->
+  <div class="screen" id="s3">
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="qpf" style="width:20%"></div></div>
+      <div class="progress-text" id="qpt">Question 1 of 13</div>
+    </div>
+    <div class="section">
+      <div id="qa"></div>
+      <div class="soft-flag" id="sflag">
+        <p>What you have just shared is significant. You do not have to keep going right now if you are not ready. If you are worried about his safety today, please contact his GP or call the <a href="tel:116123">Samaritans on 116 123</a> - free, 24 hours, completely confidential.</p>
+      </div>
+      <div class="btn-row">
+        <button class="btn-back" id="qbb" onclick="prevQ()" style="display:none">Back</button>
+        <button class="btn btn-dark" id="qnb" onclick="nextQ()" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN SAFETY: BAND C -->
+  <div class="screen" id="sSafety">
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" style="width:98%"></div></div>
+      <div class="progress-text">Your results are ready</div>
+    </div>
+    <div class="section">
+      <div class="safety-screen">
+        <h2>What you have shared suggests your partner is carrying something serious right now.</h2>
+        <p>Before you continue, please read this carefully.</p>
+        <p>What you are seeing is real. It deserves real support - not waiting, not hoping it passes. This is the kind of thing that requires medical attention and your partner deserves to receive it.</p>
+        <p>The most important thing you can do right now is help him get in front of his GP. He does not need to have the words ready before he goes. You can go with him. You can make the call on his behalf if he will let you.</p>
+        <p>While you are working out the next step, please do not carry this alone either.</p>
+        <p class="crisis-line"><a href="tel:116123">Samaritans - 116 123</a> - free, 24 hours, no judgement</p>
+        <p class="crisis-line"><a href="tel:08005858">CALM - 0800 58 58 58</a> - 6pm to midnight</p>
+        <p class="crisis-line">If he is in immediate danger, call <a href="tel:999">999</a>.</p>
+        <div class="safety-ack" id="safetyAck" onclick="pickSafetyAck()">
+          <div class="safety-ack-box" id="safetyAckBox">&#10003;</div>
+          <div class="safety-ack-text">I have read the above and I understand support is available.</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-dark" id="safetyNextBtn" onclick="buildResult()" disabled>Continue to results</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 5: RESULTS -->
+  <div class="screen" id="s5">
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+      <div class="progress-text">Your results</div>
+    </div>
+    <div class="section">
+      <div class="label-tag">Here is what your responses suggest</div>
+      <div class="score-reveal">
+        <div class="score-reveal-num" id="rScore">0</div>
+        <div class="score-reveal-label" id="rLabel">out of 39</div>
+      </div>
+      <div id="rBand"></div>
+
+      <div id="consentReview" style="margin:1.4rem 0;border:1.5px solid var(--border);padding:1.2rem 1.4rem;background:var(--promise-bg);">
+        <div style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark);font-weight:600;margin-bottom:0.8rem;">Your privacy choice</div>
+        <p id="consentReviewText" style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:1rem;"></p>
+        <div style="display:flex;flex-direction:column;gap:8px;" id="consentReviewOptions"></div>
+        <div id="endRefCodeField" style="display:none;margin-top:1rem;">
+          <label style="font-size:13px;color:var(--text2);font-weight:500;display:block;margin-bottom:5px;">Your health visitor may have given you a short reference code. If so, enter it here.</label>
+          <input type="text" id="endRefCode" class="field-input" placeholder="e.g. HV2026 - optional" maxlength="20" aria-label="Clinician reference code - optional">
+        </div>
+        <div id="consentConfirmBtn" style="margin-top:1rem;display:none;">
+          <button class="btn btn-dark" onclick="finaliseConsent()" style="width:100%;">Confirm my choice</button>
+        </div>
+        <p style="font-size:12px;color:var(--text4);margin-top:0.8rem;font-style:italic;" id="consentReviewFooter"></p>
+      </div>
+
+      <div class="divider"></div>
+      <div id="rFlags"></div>
+      <div id="rSteps"></div>
+
+      <div class="email-block" id="emailBlock">
+        <h3>Keep these results somewhere safe</h3>
+        <p>If you would like to hold onto what you have shared today - whether that is for a conversation with your health visitor, a GP appointment, or just to look back at - we can send it to your inbox now.</p>
+        <p>No account needed. Nothing shared with anyone. Unsubscribe at any point.</p>
+        <div class="email-row">
+          <input class="email-input" type="email" id="emailIn" placeholder="Your email address">
+          <button class="btn btn-gold" onclick="submitEmail()">Send me the results</button>
+        </div>
+        <button class="email-skip" onclick="skipEmail()">Not right now - just show me what to do next</button>
+      </div>
+
+      <div id="rRes" style="display:none"></div>
+
+      <div class="page-footer">
+        <div>Parents2Be International - parents2beintl.com</div>
+        <div>Built by Sarah Bailey, Founder of Parents2Be International. NHS eLfH Perinatal Mental Health trained (100%).</div>
+        <div>This assessment uses the Gotland Male Depression Scale (Walinder and Rutz, 2001), reframed for partner observation. It is not a clinical diagnosis. It is a starting point for getting the right support.</div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
+          <strong style="font-size:12px;color:var(--text3)">Accessibility</strong>
+          <p style="margin-top:4px">Parents2Be International is committed to making every resource accessible. This platform supports screen readers, keyboard navigation, high contrast display, and reduced motion. Dark and light display modes are available using the toggle above.</p>
+          <p style="margin-top:6px">If you need this assessment in an alternative format - including large print or audio - please contact us at <a href="mailto:hello@parents2beintl.com">hello@parents2beintl.com</a>.</p>
+        </div>
+        <div style="margin-top:0.8rem"><a href="https://parents2beintl.com">Home</a> - <a href="https://parents2beintl.com/privacy">Privacy</a> - <a href="mailto:hello@parents2beintl.com">Accessibility</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const QS=[
+  {t:"Has your partner been getting wound up or frustrated more easily lately - by things that would not normally bother him that much?",s:"Think about small everyday things - traffic, noise, a comment that landed wrong, the baby crying. Have his reactions felt different to you?",a:["Not really - he seems fairly steady, similar to how he normally is","A little more reactive than usual - I have noticed it but it does not feel alarming","Yes - things seem to get to him in ways that feel out of proportion","Yes - he seems constantly on edge and almost everything is triggering a reaction"]},
+  {t:"Have you noticed him snapping, losing his temper, or getting angry in a way that does not feel like him?",s:"This might show up as short temper, sarcasm, saying things he would not normally say, or a low-level irritation that does not seem to switch off.",a:["Not particularly - his reactions have felt like his own","Occasionally - more short-tempered than he would normally be","Yes - it is happening regularly and he seems aware of it too","Yes - it is affecting everyone around him and I am genuinely concerned"]},
+  {t:"Does he seem able to switch off and relax when he has the chance?",s:"Even in a quiet moment - does he actually rest, or does he stay tense and restless even when things are calm?",a:["Yes - he can generally unwind when he gets the opportunity","It takes longer than it used to but he gets there","He struggles to settle even in moments when he should be able to","He cannot switch off at all - he stays restless regardless of what is happening around him"]},
+  {t:"How has his sleep been - during the time he would normally sleep?",s:"This is not just about broken nights with the baby. When he has the chance to sleep, can he actually sleep?",a:["He is managing to get some rest when the opportunity is there","It seems harder than it should be - he struggles even when he could sleep","Sleep is a real issue - he is either unable to sleep or sleeping far too much","He is running on very little and it has been this way for some time"]},
+  {t:"Have you noticed him turning to anything more than usual to take the edge off?",s:"This might be alcohol, but it could also be staying out longer, working late, gaming, scrolling, exercise, or anything he seems to reach for when things feel heavy. There is no judgment here - this is about noticing what the pattern might be telling you.",a:["Not really - nothing has noticeably changed in how he manages day to day","Perhaps slightly - I have noticed it but it does not feel like a problem yet","Yes - I have noticed him relying on something to get through and it concerns me","Yes - it has escalated and I think it has become a way of coping rather than a choice"]},
+  {t:"How would you honestly describe his mood on an average day recently?",s:"Not the version he shows at work or to other people. The version you see at home, when the performance is off.",a:["Generally holding - up and down but nothing that stays","Flat more often than not - harder to lift him than it used to be","Low most of the time - it takes real effort for him to find anything positive","Very low or empty - he seems to be going through the motions but not really present"]},
+  {t:"How is his energy? Not just physically tired - but that deeper feeling of being completely used up.",s:"The kind of exhaustion that sleep does not fix. The kind where he wakes up already depleted.",a:["Low but manageable - he can still function and find moments of energy","Running lower than you would expect - more than tiredness, something heavier","Genuinely depleted - he is pushing through everything on reserve","He has nothing left - he seems completely emptied out and is functioning on will alone"]},
+  {t:"Has he been able to focus, make decisions, or keep on top of things the way he normally would?",s:"Think about everyday things - getting to work on time, making simple decisions, keeping up with things at home. Does his head seem to be operating the way it used to?",a:["Mostly yes - he is keeping up with things well enough","A bit slower and less sharp than usual but still managing","He is noticeably struggling - concentration and decisions seem much harder than they should be","He is really finding it hard - avoiding decisions or making mistakes he would not normally make"]},
+  {t:"Has he pulled back from things he normally enjoys or people he normally spends time with?",s:"Has he managed to engage with the people and things that used to matter to him, even on a smaller scale? Or has he quietly stepped back without really deciding to?",a:["Not much - he is still engaging with the things and people that matter to him","A little - less motivated but still making the effort","Quite a bit - he has pulled back from a number of things he used to value","Significantly - he has largely withdrawn and the distance feels hard to close"]},
+  {t:"Does he seem hard on himself - like he feels he is failing as a father, a partner, or just as a person?",s:"This can show up as guilt that does not seem to make sense, or a persistent sense that he is not good enough no matter what he does.",a:["No more than he would usually question himself","Occasionally - doubts come but they pass","Frequently - he returns to feelings of not being good enough again and again","Constantly - the sense that he is failing feels persistent and he cannot seem to shake it"]},
+  {t:"Has he mentioned any physical symptoms that seem hard to account for - headaches, back pain, chest tightness, stomach issues?",s:"When someone is under significant pressure, it can present physically in ways that are easy to dismiss. These are worth paying attention to.",a:["Nothing he would flag as out of the ordinary","One or two things that have come up - minor but present","A few persistent things that keep returning and have not been resolved","His body seems to be carrying something - the physical symptoms have become hard to ignore"]},
+  {t:"Has he been throwing himself into work, exercise, projects, or keeping constantly busy - to the point where slowing down seems almost impossible for him?",s:"Staying productive is not always a problem. But when the activity becomes something he cannot stop, it can sometimes be because stopping means feeling something he is not ready for.",a:["No more than usual - he can stop and be present when he wants to","A bit busier than normal - I notice it but he can still slow down","He finds it hard to stop - activity seems like the only way he can keep going","He is using it to block things out - the busyness feels deliberate and I think he knows it"]},
+  {t:"Has he ever said anything - even in passing - about not wanting to be here, disappearing, or that everyone would be better off without him?",s:"This is the hardest question. If anything like this has come up - even once, even briefly, even said as if it were nothing - it is worth noting here. You are not overreacting by flagging it.",a:["No - nothing like that has come up","Something passing - a comment that crossed the line but did not stay","More than once - it has come up and it is something I have been holding onto","Yes - it feels serious and I am scared about it"],sensitive:true}
+];
+
+const KS='p2bi-p-scores', KQ='p2bi-p-cq', KC='p2bi-p-ctx', KBD='p2bi-p-bd';
+const KCC='p2bi-p-consent-choice', KCF='p2bi-p-consent-final';
+
+let scores = new Array(13).fill(null);
+let currentQ = 0;
+let totalScore = 0;
+let consentChoice = null;
+let finalConsent = null;
+let safetyAcked = false;
+
+(function(){
+  const s = localStorage.getItem('p2bi-p-theme');
+  const d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const t = s || (d ? 'dark' : 'light');
+  if(t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+  updModeBtn(t);
+})();
+
+function toggleMode(){
+  const c = document.documentElement.getAttribute('data-theme');
+  const n = c === 'dark' ? 'light' : 'dark';
+  if(n === 'dark') document.documentElement.setAttribute('data-theme','dark');
+  else document.documentElement.removeAttribute('data-theme');
+  localStorage.setItem('p2bi-p-theme', n);
+  updModeBtn(n);
+}
+function updModeBtn(t){ const b = document.getElementById('modeBtn'); if(b) b.textContent = t === 'dark' ? 'Light mode' : 'Dark mode'; }
+
+function dismissBmark(){
+  document.getElementById('bmarkBanner').style.display = 'none';
+  localStorage.setItem(KBD,'1');
+}
+(function(){ if(localStorage.getItem(KBD)==='1'){ const b=document.getElementById('bmarkBanner'); if(b) b.style.display='none'; }})();
+
+function go(n){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const target = typeof n === 'number' ? document.getElementById('s'+n) : document.getElementById(n);
+  if(target) target.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function handleStart(){
+  if(scores.some(s => s !== null)){ go(3); showQ(currentQ); }
+  else { go('sConsent'); }
+}
+
+function handleConsentNext(){ go(1); }
+
+function pickExpectant(val, el){
+  document.querySelectorAll('#expectantYes, #expectantNo').forEach(o => { o.classList.remove('picked'); o.setAttribute('aria-checked','false'); });
+  el.classList.add('picked'); el.setAttribute('aria-checked','true');
+  document.getElementById('expectantNote').style.display = val === 'yes' ? 'block' : 'none';
+  try{ localStorage.setItem('p2bi-p-expectant', val); } catch(e){}
+  saveCtx();
+}
+
+function pickConsent(choice, el){
+  consentChoice = choice;
+  localStorage.setItem(KCC, choice);
+  document.querySelectorAll('#sConsent .consent-option').forEach(o => { o.classList.remove('picked'); o.setAttribute('aria-checked','false'); });
+  el.classList.add('picked'); el.setAttribute('aria-checked','true');
+  document.getElementById('consentNextBtn').disabled = false;
+  if(typeof gtag !== 'undefined') gtag('event','partner_consent_opening_selected',{choice:choice});
+}
+
+function showEndConsent(){
+  totalScore = scores.reduce((a,b) => a + (b||0), 0);
+  if(totalScore >= 27){ go('sSafety'); }
+  else { buildResult(); }
+}
+
+function pickSafetyAck(){
+  safetyAcked = !safetyAcked;
+  const ack = document.getElementById('safetyAck');
+  const box = document.getElementById('safetyAckBox');
+  const btn = document.getElementById('safetyNextBtn');
+  if(safetyAcked){ ack.classList.add('picked'); box.textContent='\u2713'; box.style.color=''; btn.disabled=false; }
+  else { ack.classList.remove('picked'); box.textContent='\u2713'; box.style.color='transparent'; btn.disabled=true; }
+}
+
+function saveSc(){ try{ localStorage.setItem(KS,JSON.stringify(scores)); localStorage.setItem(KQ,currentQ); }catch(e){} }
+
+function saveCtx(){
+  try{
+    const ctx={};
+    ['partnerAge','numKids','situation','support','howlong'].forEach(id=>{ const el=document.getElementById(id); if(el) ctx[id]=el.value; });
+    localStorage.setItem(KC,JSON.stringify(ctx));
+  }catch(e){}
+}
+
+function clearSaved(){ [KS,KQ,KC,KCC,KCF].forEach(k=>{ try{ localStorage.removeItem(k); }catch(e){} }); }
+
+function showQ(idx){
+  const q = QS[idx];
+  document.getElementById('qpf').style.width = (20 + (idx/13)*65) + '%';
+  document.getElementById('qpt').textContent = 'Question ' + (idx+1) + ' of 13';
+  document.getElementById('qa').innerHTML =
+    `<div class="q-num">Question ${idx+1} of 13</div>` +
+    `<div class="q-text">${q.t}</div>` +
+    (q.s ? `<div class="q-sub">${q.s}</div>` : '') +
+    `<div class="answers" id="an${idx}">` +
+    q.a.map((a,v) => `<div class="answer" onclick="pickA(${idx},${v},this)">${a}</div>`).join('') +
+    `</div>`;
+  if(scores[idx]!==null){ const opts=document.querySelectorAll('#an'+idx+' .answer'); if(opts[scores[idx]]) opts[scores[idx]].classList.add('picked'); document.getElementById('qnb').disabled=false; }
+  else { document.getElementById('qnb').disabled=true; }
+  const fl=document.getElementById('sflag');
+  fl.style.display=(q.sensitive && scores[idx]!==null && scores[idx]>=2)?'block':'none';
+  document.getElementById('qbb').style.display = idx===0?'none':'inline-block';
+}
+
+function pickA(qi, v, el){
+  scores[qi]=v;
+  document.querySelectorAll('#an'+qi+' .answer').forEach(a=>a.classList.remove('picked'));
+  el.classList.add('picked');
+  document.getElementById('qnb').disabled=false;
+  saveSc();
+  if(QS[qi].sensitive && v>=2) document.getElementById('sflag').style.display='block';
+  else document.getElementById('sflag').style.display='none';
+  if(typeof gtag !== 'undefined') gtag('event','partner_question_answered',{question_number:qi+1,value:v});
+}
+
+function nextQ(){ if(currentQ<12){ currentQ++; saveSc(); showQ(currentQ); } else showEndConsent(); }
+function prevQ(){ if(currentQ>0){ currentQ--; saveSc(); showQ(currentQ); } }
+
+function getBand(s){
+  if(s<=12) return{cls:'green',h:'What you have shared does not point to serious concern right now',m:'Based on what you have described, the patterns you are seeing do not indicate significant clinical concern at this moment. That does not mean everything is easy or that your instinct was wrong. It means that right now the signs are within a range where awareness and gentle support can help.',o:'You came here because you cared enough to look. That matters. Keep paying attention. If things change, come back.',cta:'light'};
+  if(s<=26) return{cls:'amber',h:'What you are seeing is real and it deserves attention',m:'What you have described points to a level of difficulty that is clinically significant. This is not just the pressure of new fatherhood. These are patterns that, left unaddressed, tend to deepen - and you have noticed them at a point where something can still be done.',o:'You do not have to wait until it gets worse to act. What you are seeing right now is exactly the point at which the right support can make a real difference.',cta:'medium'};
+  return{cls:'red',h:'What you are seeing is serious - please do not wait',m:'What you have described suggests your partner is carrying a significant level of difficulty. This is not something to hope will pass or manage quietly. He needs support - and so do you, as the person who has been carrying this awareness.',o:'You have been holding this on your own. You do not have to any more. The most important thing you can do today is get him in front of his GP - and make sure someone knows you are not coping either.',cta:'urgent'};
+}
+
+function buildResult(){
+  totalScore = scores.reduce((a,b)=>a+(b||0),0);
+  const band = getBand(totalScore);
+  document.getElementById('rScore').textContent = totalScore;
+  document.getElementById('rLabel').textContent = 'out of 39';
+  document.getElementById('rBand').innerHTML =
+    `<div class="result-card ${band.cls}"><h3>${band.h}</h3><p>${band.m}</p></div>` +
+    `<div class="body-text" style="margin-top:0.5rem"><strong style="color:var(--text)">What this means for you:</strong> ${band.o}</div>`;
+
+  const su = document.getElementById('support').value;
+  const si = document.getElementById('situation').value;
+  const hl = document.getElementById('howlong').value;
+  let flags = [];
+  if(su==='isolated') flags.push('You are carrying this awareness on your own and that is a significant weight. Watching someone you love struggle - and not knowing what to do - is one of the loneliest experiences a partner can have. You deserve support too, not just him.');
+  if(si==='Separated or divorcing') flags.push('Noticing these signs while also navigating a separation adds a layer of complexity that most resources do not acknowledge. What you are managing is genuinely hard and it is right that you reached out.');
+  if(hl==='months') flags.push('You have been holding this for a few months or more. That is a long time to carry something this heavy without a name for it. What you have done today by completing this matters.');
+  document.getElementById('rFlags').innerHTML = flags.length>0 ?
+    `<div class="divider"></div><div class="label-tag">A few things we want you to know</div>` +
+    flags.map(f=>`<div class="flag-card"><p>${f}</p></div>`).join('') : '';
+
+  let steps = '';
+  if(band.cta==='light'){
+    steps=`<div class="divider"></div><div class="label-tag">What you might do next</div><div class="next-card"><h4>Keep paying attention</h4><p>Your instinct brought you here. Trust it. If things change, come back. The patterns that develop into something serious often start quietly.</p></div><div class="next-card"><h4>Free resources for partners</h4><p>The 7 Signs Guide gives you language for what to look for and words to start the conversation. Free at Parents2Be International.</p></div>`;
+  } else if(band.cta==='medium'){
+    steps=`<div class="divider"></div><div class="label-tag">What we would suggest</div><div class="next-card"><h4>Share what you have noticed - gently</h4><p>You do not need to have a clinical conversation. "I have been worried about you and I want to make sure you are okay" is enough to open the door.</p></div><div class="next-card"><h4>Share the free assessment with him</h4><p>The father-facing version of this assessment is free and takes under five minutes. It might be easier for him to see it himself than to hear it from you first.</p></div><div class="next-card"><h4>His GP - sooner rather than later</h4><p>You can encourage him to go, or offer to go with him. He does not need to use the word depression before he walks in the door.</p></div>`;
+  } else {
+    steps=`<div class="divider"></div><div class="label-tag">Please do not sit on this</div><div class="next-card"><h4>His GP - this week, today if you can</h4><p>Call on his behalf if he will let you. Tell them he is a new father and he is not coping. Those words are enough.</p></div><div class="next-card"><h4>Samaritans - 116 123</h4><p>Free. 24 hours. For him, for you, or for both of you together. You do not have to be at the edge to call.</p></div><div class="next-card"><h4>You need support too</h4><p>Contact your own GP and tell them what you have been carrying. What you are experiencing as the witness matters and deserves care.</p></div>`;
+  }
+  document.getElementById('rSteps').innerHTML = steps;
+  clearSaved();
+  if(typeof gtag !== 'undefined') gtag('event','partner_assessment_complete',{score:totalScore,band:band.cls});
+  go(5);
+  buildConsentReview();
+}
+
+function buildConsentReview(){
+  var choice = finalConsent || consentChoice || 'C';
+  var labels = { A:'You chose to share your responses with the clinician who referred you.', B:'You chose to keep your responses anonymous.', C:'You chose to keep your responses completely private.' };
+  var reviewText = document.getElementById('consentReviewText');
+  var reviewOptions = document.getElementById('consentReviewOptions');
+  var reviewFooter = document.getElementById('consentReviewFooter');
+  var confirmBtn = document.getElementById('consentConfirmBtn');
+  if(reviewText) reviewText.textContent = labels[choice]||labels.C;
+  if(reviewOptions){
+    var optLabels = { A:'Share my responses with the clinician who referred me.', B:'Keep my responses anonymous.', C:'Keep everything completely private.' };
+    var html='';
+    ['A','B','C'].forEach(function(o){
+      var picked=(o===choice)?' picked':''; var checked=(o===choice)?'true':'false';
+      html+='<div class="consent-option'+picked+'" id="rcOpt'+o+'" data-choice="'+o+'" role="radio" aria-checked="'+checked+'" tabindex="0">'+
+        '<div class="consent-opt-letter">'+o+'</div>'+
+        '<div class="consent-opt-text">'+optLabels[o]+'</div></div>';
+    });
+    reviewOptions.innerHTML=html;
+    reviewOptions.querySelectorAll('.consent-option').forEach(function(el){
+      el.addEventListener('click',function(){ pickReviewConsent(this.getAttribute('data-choice'),this); });
+      el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ pickReviewConsent(this.getAttribute('data-choice'),this); e.preventDefault(); } });
+    });
+  }
+  if(reviewFooter){
+    reviewFooter.textContent = (choice==='B'||choice==='C') ?
+      'I have seen my responses and I am choosing to keep them private for now. I understand that any score indicating a clinical concern is something I should act on.' :
+      'Your responses will be sent privately and securely to the clinician who referred you.';
+  }
+  if(confirmBtn) confirmBtn.style.display='block';
+}
+
+function pickReviewConsent(choice, el){
+  finalConsent=choice;
+  document.querySelectorAll('#consentReviewOptions .consent-option').forEach(function(o){ o.classList.remove('picked'); o.setAttribute('aria-checked','false'); });
+  el.classList.add('picked'); el.setAttribute('aria-checked','true');
+  var refField=document.getElementById('endRefCodeField');
+  if(refField) refField.style.display=(choice==='A'&&consentChoice!=='A')?'block':'none';
+  var footer=document.getElementById('consentReviewFooter');
+  if(footer) footer.textContent=(choice==='B'||choice==='C')?
+    'I have seen my responses and I am choosing to keep them private for now.' :
+    'Your responses will be sent privately and securely to the clinician who referred you.';
+}
+
+function finaliseConsent(){
+  const choice=finalConsent||consentChoice||'C';
+  const confirmBtn=document.getElementById('consentConfirmBtn');
+  if(confirmBtn) confirmBtn.style.display='none';
+  const reviewText=document.getElementById('consentReviewText');
+  if(reviewText) reviewText.textContent='Your choice has been confirmed. Thank you.';
+  const reviewOptions=document.getElementById('consentReviewOptions');
+  if(reviewOptions) reviewOptions.style.display='none';
+  const footer=document.getElementById('consentReviewFooter');
+  if(footer) footer.style.display='none';
+  if(typeof gtag !== 'undefined') gtag('event','partner_consent_finalised',{opening_choice:consentChoice,final_choice:choice,changed:choice!==consentChoice});
+}
+
+function submitEmail(){
+  const email=document.getElementById('emailIn').value.trim();
+  if(!email||!email.includes('@')){ document.getElementById('emailIn').style.borderColor='#C62828'; return; }
+  fetch('https://connect.mailerlite.com/api/subscribers',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':'Bearer API KEY GOES HERE'},
+    body:JSON.stringify({
+      email:email,
+      groups:['183382916886169384'],
+      fields:{ assessment_score:totalScore, assessment_band:getBand(totalScore).cls, consent_type:finalConsent||'C' }
+    })
+  })
+  .then(()=>showRes(true))
+  .catch(()=>showRes(true));
+}
+
+function skipEmail(){ showRes(false); }
+
+function showRes(withEmail){
+  document.getElementById('emailBlock').style.display='none';
+  const band=getBand(totalScore);
+  document.getElementById('rRes').style.display='block';
+  document.getElementById('rRes').innerHTML=
+    `<div class="divider"></div><div class="label-tag">Resources</div>`+
+    (withEmail?'<p class="body-text" style="color:var(--rg-bd);font-weight:500">Your results are on their way. Check your inbox.</p>':'')+
+    `<div class="next-card"><h4>The 7 Signs Guide - free</h4><p>Names what you might be seeing in plain language. Free at <a href="https://parents2beintl.com" style="color:var(--gold-dark);text-decoration:none">parents2beintl.com</a></p></div>`+
+    `<div class="next-card" style="border-color:var(--gold)"><h4>The father-facing assessment</h4><p>Free, anonymous, takes under five minutes. Share the link with him when the moment feels right. <a href="https://parents2beintl-hue.github.io/parents2be-assessment" style="color:var(--gold-dark);font-weight:500;text-decoration:none">parents2beintl-hue.github.io/parents2be-assessment</a></p></div>`+
+    `<div class="next-card"><h4>Samaritans - 116 123</h4><p>Free. 24 hours. For him, for you, or for both of you. No pressure to have the right words.</p></div>`+
+    `<div style="margin-top:1.2rem;display:flex;gap:10px;flex-wrap:wrap">`+
+    `<button class="btn btn-gold" onclick="window.location.href='https://parents2beintl.com'">Visit Parents2Be International</button></div>`;
+  if(typeof gtag !== 'undefined') gtag('event', withEmail?'partner_email_captured':'partner_email_skipped',{score:totalScore});
+}
+
+function loadSaved(){
+  try{
+    const ss=localStorage.getItem(KS); const sq=localStorage.getItem(KQ);
+    if(ss){ const p=JSON.parse(ss); if(Array.isArray(p)&&p.length===13) scores=p; }
+    if(sq!==null) currentQ=parseInt(sq)||0;
+    const sc=localStorage.getItem(KC);
+    if(sc){ const ctx=JSON.parse(sc); ['partnerAge','numKids','situation','support','howlong'].forEach(id=>{ const el=document.getElementById(id); if(el&&ctx[id]) el.value=ctx[id]; }); }
+    const cc=localStorage.getItem(KCC); if(cc) consentChoice=cc;
+    if(ss&&scores.some(s=>s!==null)){ document.getElementById('retBanner').style.display='block'; document.getElementById('startBtn').textContent='Continue where I left off'; }
+  }catch(e){}
+}
+
+loadSaved();
+</script>
+</body>
+</html>

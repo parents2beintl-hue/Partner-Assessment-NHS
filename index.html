@@ -12,6 +12,15 @@
   gtag('js', new Date());
   gtag('config', 'G-E0KTPZJX8Z');
 </script>
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2132509');
+</script>
+<!-- End MailerLite Universal -->
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -217,7 +226,6 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
 
 <div class="page" id="mainContent" role="main" aria-label="Partner Observation Assessment">
 
-  <!-- SCREEN 0: LANDING -->
   <div class="screen active" id="s0">
     <div class="section">
       <div class="ret-banner" id="retBanner">
@@ -245,7 +253,6 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
     </div>
   </div>
 
-  <!-- SCREEN CONSENT -->
   <div class="screen" id="sConsent">
     <div class="section">
       <div class="label-tag">Before you begin</div>
@@ -279,7 +286,6 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
     </div>
   </div>
 
-  <!-- SCREEN 1: CONTEXT -->
   <div class="screen" id="s1">
     <div class="progress-wrap">
       <div class="progress-track"><div class="progress-fill" style="width:8%"></div></div>
@@ -360,7 +366,6 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
     </div>
   </div>
 
-  <!-- SCREEN 2: PRE-ASSESSMENT BRIEFING -->
   <div class="screen" id="s2">
     <div class="progress-wrap">
       <div class="progress-track"><div class="progress-fill" style="width:18%"></div></div>
@@ -382,7 +387,6 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
     </div>
   </div>
 
-  <!-- SCREEN 3: QUESTIONS -->
   <div class="screen" id="s3">
     <div class="progress-wrap">
       <div class="progress-track"><div class="progress-fill" id="qpf" style="width:20%"></div></div>
@@ -400,7 +404,6 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
     </div>
   </div>
 
-  <!-- SCREEN SAFETY: BAND C -->
   <div class="screen" id="sSafety">
     <div class="progress-wrap">
       <div class="progress-track"><div class="progress-fill" style="width:98%"></div></div>
@@ -413,7 +416,7 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
         <p>What you are seeing is real. It deserves real support - not waiting, not hoping it passes. The most important thing you can do right now is help him get in front of his GP. He does not need to have the words ready before he goes. You can go with him. You can make the call on his behalf if he will let you.</p>
         <p>While you are working out the next step, please do not carry this alone either.</p>
         <p class="crisis-line"><a href="tel:116123">Samaritans - 116 123</a> - free, 24 hours, no judgement, no pressure to say the right thing</p>
-        <p class="crisis-line"><a href="tel:08005858580">CALM - 0800 58 58 58</a> - 6pm to midnight</p>
+        <p class="crisis-line"><a href="tel:08005858585">CALM - 0800 58 58 58</a> - 6pm to midnight</p>
         <p class="crisis-line">If he is in immediate danger, call <a href="tel:999">999</a>.</p>
         <div class="safety-ack" id="safetyAck" onclick="pickSafetyAck()">
           <div class="safety-ack-box" id="safetyAckBox">&#10003;</div>
@@ -426,7 +429,6 @@ h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.25; 
     </div>
   </div>
 
-  <!-- SCREEN 5: RESULTS -->
   <div class="screen" id="s5">
     <div class="progress-wrap">
       <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
@@ -507,7 +509,6 @@ let totalScore = 0;
 let consentChoice = null;
 let finalConsent = null;
 let safetyAcked = false;
-let contextReturnMode = false;
 
 (function(){
   const s = localStorage.getItem('p2bi-p-theme');
@@ -683,7 +684,7 @@ function buildResult(){
   if(band.cta==='light'){
     steps='<div class="divider"></div><div class="label-tag">What you might do next</div><div class="next-card"><h4>Keep paying attention</h4><p>Your instinct brought you here. Trust it. If things change, come back. The patterns that develop into something serious often start quietly.</p></div><div class="next-card"><h4>The free 7 Signs Guide</h4><p>Names what you might be seeing in plain language and gives you words to start the conversation. Free at parents2beintl.com.</p></div>';
   } else if(band.cta==='medium'){
-    steps='<div class="divider"></div><div class="label-tag">What we would suggest</div><div class="next-card"><h4>Share what you have noticed - gently</h4><p>You do not need to have a clinical conversation. "I have been worried about you and I want to make sure you are okay" is enough to open the door.</p></div><div class="next-card"><h4>Share the free assessment with him</h4><p>The father-facing version of this assessment is free and takes under five minutes. It might be easier for him to see it himself than to hear it from you first.</p></div><div class="next-card"><h4>His GP - sooner rather than later</h4><p>You can encourage him to go, or offer to go with him. He does not need to use the word depression before he walks in the door.</p></div>';
+    steps='<div class="divider"></div><div class="label-tag">What we would suggest</div><div class="next-card"><h4>Share what you have noticed - gently</h4><p>You do not need to have a clinical conversation. "I have been worried about you and I want to make sure you are okay" is enough to open the door.</p></div><div class="next-card"><h4>Share the free assessment with him</h4><p>The father-facing version of this assessment is free and takes under five minutes. <a href="https://parents2beintl-hue.github.io/Father-Assessment-NHS/" style="color:var(--gold-dark);text-decoration:none">parents2beintl-hue.github.io/Father-Assessment-NHS/</a></p></div><div class="next-card"><h4>His GP - sooner rather than later</h4><p>You can encourage him to go, or offer to go with him. He does not need to use the word depression before he walks in the door.</p></div>';
   } else {
     steps='<div class="divider"></div><div class="label-tag">Please do not sit on this</div><div class="next-card"><h4>His GP - this week, today if you can</h4><p>Call on his behalf if he will let you. Tell them he is a new father and he is not coping. Those words are enough.</p></div><div class="next-card"><h4>Samaritans - 116 123</h4><p>Free. 24 hours. For him, for you, or for both of you together. You do not have to be at the edge to call.</p></div><div class="next-card"><h4>You need support too</h4><p>Contact your own GP and tell them what you have been carrying. What you are experiencing as the witness matters and deserves care.</p></div>';
   }
@@ -753,17 +754,14 @@ function finaliseConsent(){
 function submitEmail(){
   const email=document.getElementById('emailIn').value.trim();
   if(!email||!email.includes('@')){ document.getElementById('emailIn').style.borderColor='#C62828'; return; }
-  fetch('https://connect.mailerlite.com/api/subscribers',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Authorization':'Bearer '},
-    body:JSON.stringify({
-      email:email,
-      groups:['183382916886169384'],
-      fields:{ assessment_score:totalScore, assessment_band:getBand(totalScore).cls, consent_type:finalConsent||'C' }
-    })
-  })
-  .then(function(){ showRes(true); })
-  .catch(function(){ showRes(true); });
+  const form = document.getElementById('mlHiddenForm');
+  form.querySelector('input[name="fields[email]"]').value = email;
+  form.querySelector('input[name="fields[assessment_score]"]').value = totalScore;
+  form.querySelector('input[name="fields[assessment_band]"]').value = getBand(totalScore).cls;
+  form.querySelector('input[name="fields[consent_type]"]').value = finalConsent || 'C';
+  fetch(form.action, { method:'POST', body: new FormData(form) })
+    .then(function(){ showRes(true); })
+    .catch(function(){ showRes(true); });
 }
 
 function skipEmail(){ showRes(false); }
@@ -776,7 +774,7 @@ function showRes(withEmail){
     '<div class="divider"></div><div class="label-tag">Resources</div>'+
     (withEmail?'<p class="body-text" style="color:var(--rg-bd);font-weight:500">Your results are on their way. Check your inbox.</p>':'')+
     '<div class="next-card"><h4>The free 7 Signs Guide</h4><p>Names what you might be seeing in plain language. Free at <a href="https://parents2beintl.com" style="color:var(--gold-dark);text-decoration:none">parents2beintl.com</a></p></div>'+
-    '<div class="next-card" style="border-color:var(--gold)"><h4>The father-facing assessment</h4><p>Free, anonymous, takes under five minutes. Share the link with him when the moment feels right. <a href="https://parents2beintl-hue.github.io/parents2be-assessment" style="color:var(--gold-dark);font-weight:500;text-decoration:none">parents2beintl-hue.github.io/parents2be-assessment</a></p></div>'+
+    '<div class="next-card" style="border-color:var(--gold)"><h4>The father-facing assessment</h4><p>Free, anonymous, takes under five minutes. Share the link with him when the moment feels right. <a href="https://parents2beintl-hue.github.io/Father-Assessment-NHS/" style="color:var(--gold-dark);font-weight:500;text-decoration:none">parents2beintl-hue.github.io/Father-Assessment-NHS/</a></p></div>'+
     '<div class="next-card"><h4>Samaritans - 116 123</h4><p>Free. 24 hours. For him, for you, or for both of you. No pressure to have the right words.</p></div>'+
     '<div style="margin-top:1.2rem;display:flex;gap:10px;flex-wrap:wrap">'+
     '<button class="btn btn-gold" onclick="window.location.href=\'https://parents2beintl.com\'">Visit Parents2Be International</button></div>';
@@ -785,5 +783,14 @@ function showRes(withEmail){
 
 loadSaved();
 </script>
+
+<!-- Hidden MailerLite form - no API key, submits securely server-side -->
+<form id="mlHiddenForm" action="https://assets.mailerlite.com/jsonp/2132509/forms/GbWGxM/subscribe" method="POST" style="display:none;" aria-hidden="true">
+  <input type="hidden" name="fields[email]" value="">
+  <input type="hidden" name="fields[assessment_score]" value="">
+  <input type="hidden" name="fields[assessment_band]" value="">
+  <input type="hidden" name="fields[consent_type]" value="">
+  <input type="hidden" name="ml-submit" value="1">
+</form>
 </body>
 </html>
